@@ -27,3 +27,5 @@ router.put("/changePrivacy", (req, res) => {
 router.delete("/delete", (req, res) => {
 
 });
+
+module.exports = router;
