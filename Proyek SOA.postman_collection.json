@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "404b5750-219d-485c-9efb-e63202624556",
+		"name": "Proyek SOA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u2",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "Bad",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/review/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"review",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/review",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"review"
+					],
+					"query": [
+						{
+							"key": "id_book",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "username",
+							"value": "u2",
+							"disabled": true
+						},
+						{
+							"key": "rating",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Review",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "So bad!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/review/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"review",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Review",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
