@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2fbc3d01-8903-47b8-af2b-c2ce27e14b43",
+		"_postman_id": "918cd84c-2816-4f01-bdde-511a224c9e78",
 		"name": "Proyek SOA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -280,6 +280,132 @@
 					"path": [
 						"bookshelf",
 						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bookmark",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/bookmark/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookmark",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bookmark",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						},
+						{
+							"key": "page_number",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/bookmark/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookmark",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bookmark",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/bookmark/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookmark",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Bookmark",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						},
+						{
+							"key": "page_number",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "note",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/bookmark/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookmark",
+						"1"
 					]
 				}
 			},
