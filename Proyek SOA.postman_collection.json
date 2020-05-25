@@ -1,10 +1,219 @@
 {
 	"info": {
-		"_postman_id": "918cd84c-2816-4f01-bdde-511a224c9e78",
-		"name": "Proyek SOA",
+		"_postman_id": "9161bf36-996d-4048-9b72-9218cca6184b",
+		"name": "Proyek SOA copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "vincent",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "vc",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Vincent",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "087819111575",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "/C:/Users/Vincent/Pictures/detective pikachu.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "vincent",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "vc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwMzk4MzI0NDkzLnBuZyIsImlhdCI6MTU5MDM5ODMyN30.ZWexHlrI9uRRJ74oTMbX_czMTG1osm8FYfwMU0UK61k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "vc",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Vincent",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "087819111575",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "/C:/Users/Vincent/Pictures/boo.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/user/updateUser/vincent",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"updateUser",
+								"vincent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete ",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwMzk4MzI0NDkzLnBuZyIsImlhdCI6MTU5MDM5ODMyN30.ZWexHlrI9uRRJ74oTMbX_czMTG1osm8FYfwMU0UK61k",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/vincent",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"vincent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upgrade",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwMzk4MzUxMzk2LmpwZyIsImlhdCI6MTU5MDM5ODk5MX0.gYdM_qhj400-jP0HSIukSsrnsofdveL4GFYLMnFFA3c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/user/upgrade",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/V",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"V"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
 		{
 			"name": "Create Review",
 			"request": {
