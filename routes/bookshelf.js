@@ -142,8 +142,20 @@ router.put("/changePrivacy", async (req, res) => {
 });
 
 //Delete book from bookshelf
-router.delete("/delete", (req, res) => {
-
+router.delete("/delete", async (req, res) => {
+    var username = req.body.username, book_id = req.body.book_id;
+    if (!username || username == '' || !book_id || book_id == '') {
+        res.status(400).send('Fill all of the available fields');
+    } else {
+        const checkUser = await getUser(username);
+        if (checkUser.length > 0) {
+            const checkBookshelf = await executeQuery(`select * from d_bookshelf where username='${username}' and id_book=${book_id}`);
+            if (checkBookshelf.length > 0) {
+                const deleteBook = await executeQuery(`delete from d_bookshelf where username='${username}' and id_book=${book_id}`);
+                res.status(200).send(`Book with id ${book_id} has deleted from your bookshelf`);
+            } else res.status(400).send(`Book with id ${book_id} is not in your bookshelf`);
+        } else res.status(400).send("Please check your username again");
+    }
 });
 
 module.exports = router;

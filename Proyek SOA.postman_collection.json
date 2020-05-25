@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "404b5750-219d-485c-9efb-e63202624556",
+		"_postman_id": "2fbc3d01-8903-47b8-af2b-c2ce27e14b43",
 		"name": "Proyek SOA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -125,6 +125,162 @@
 				"header": [],
 				"url": {
 					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Bookshelf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "book_id",
+							"value": "40",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/bookshelf/insert",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookshelf",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Bookshelf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/bookshelf/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookshelf",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search User's Bookshelf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:3000/bookshelf/search/u2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookshelf",
+						"search",
+						"u2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Privacy Bookshelf",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/bookshelf/changePrivacy",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookshelf",
+						"changePrivacy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bookshelf",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "u1",
+							"type": "text"
+						},
+						{
+							"key": "book_id",
+							"value": "40",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/bookshelf/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bookshelf",
+						"delete"
+					]
 				}
 			},
 			"response": []
