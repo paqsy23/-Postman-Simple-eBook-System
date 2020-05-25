@@ -44,36 +44,6 @@ function executeQuery(conn, query){
     });
 }
 
-router.post('/gambar', upload.single('profile_picture'), async function(req, res,next) {
-    var imageData = fs.readFileSync(req.file.path);
-
-    if(!imageData){res.status(400).send("Gambar Belum Dipilih")}
-    else{
-        
-        res.json({ success: true, file1: req.file, data: imageData, update: false })
-
-            var username = req.body.username;
-            var password = req.body.password;
-            var name = req.body.name;
-            var phone_number = req.body.phone_number;
-    
-            if(!username){
-                res.status(400).send("Username Kosong");
-            }else if(!password){
-                res.status(400).send("Password Kosong");
-            }else if(!name){
-                res.status(400).send("name Kosong");
-            }else if(!phone_number){
-                res.status(400).send("phone number Kosong");
-            }else{
-                const conn = await getConnection();
-                const insert = await executeQuery(conn, `insert into user values('${username}','${password}','${name}','${phone_number}',1,'${imageData}')`);
-                conn.release();
-                res.status(200).send("akun "+ username + " berhasil dibuat");
-            }
-    }
-})
-
 //register user
 router.post("/register",async(req,res)=>{
     let upload = multer({
