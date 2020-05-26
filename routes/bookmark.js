@@ -1,4 +1,4 @@
-const express = require("express"), mysql = require("mysql"), request = require("request");
+const express = require("express"), mysql = require("mysql"), request = require("request"), jwt = require("jsonwebtoken");
 var xml2js = require('xml2js');
 const parser = new xml2js.Parser();
 const config = require("../config");
@@ -60,14 +60,14 @@ router.post("/:id_buku", async(req,res)=>{
         res.status(401).send("Token not found");
     }
     try{
-        user = jwt.verify(token,"proyek_soa");
+        user = jwt.verify(token,"proyek-soa");
     }catch(err){
         //401 not authorized
         res.status(401).send("Token Invalid");
     }
     if(user!=null){
         var id_buku = req.params.id_buku;
-        var username = req.body.username;
+        var username = user.username;
         var page_number = req.body.page_number;
         var note = req.body.note;
         console.log(id_buku);
@@ -77,10 +77,10 @@ router.post("/:id_buku", async(req,res)=>{
             const book = await getBook(id_buku);
             if(book.error!=null){
                 var obj={
-                    status:400,
+                    status:404,
                     message:"Book not found!"
                 };
-                res.status(400).send(obj);
+                res.status(404).send(obj);
             }else{
                 const conn = await getConnection();
                 const check = await executeQuery(conn, `select * from bookmark where username='${username}' and id_book='${id_buku}'`);
@@ -122,7 +122,7 @@ router.get("/:id_buku", async(req,res)=>{
         res.status(401).send("Token not found");
     }
     try{
-        user = jwt.verify(token,"proyek_soa");
+        user = jwt.verify(token,"proyek-soa");
     }catch(err){
         //401 not authorized
         res.status(401).send("Token Invalid");
@@ -133,13 +133,13 @@ router.get("/:id_buku", async(req,res)=>{
             const book = await getBook(id_buku);
             if(book.error!=null){
                 var obj={
-                    status:400,
+                    status:404,
                     message:"Book not found!"
                 };
-                res.status(400).send(obj);
+                res.status(404).send(obj);
             }else{
                 const conn = await getConnection();
-                const getBookmark = await executeQuery(conn, `select * from bookmark where id_book='${id_buku}'`);
+                const getBookmark = await executeQuery(conn, `select * from bookmark where id_book='${id_buku}' and username='${user.username}'`);
                 var obj = {
                     status:200,
                     bookmark: {
@@ -176,7 +176,7 @@ router.put("/:id_buku", async(req,res)=>{
         res.status(401).send("Token not found");
     }
     try{
-        user = jwt.verify(token,"proyek_soa");
+        user = jwt.verify(token,"proyek-soa");
     }catch(err){
         //401 not authorized
         res.status(401).send("Token Invalid");
@@ -184,19 +184,21 @@ router.put("/:id_buku", async(req,res)=>{
     if(user!=null){
         const conn = await getConnection();
         var id_buku = req.params.id_buku;
-        var username = req.body.username;
+        var username = user.username;
         var page_number = req.body.page_number;
         var note = req.body.note;
         var fail = true;
         console.log(id_buku);
-            const book = await getBook(id_buku);
-            if(book.error!=null){
-                var obj={
-                    status:400,
-                    message:"Book not found!"
-                };
-                res.status(400).send(obj);
-            }else{
+        const book = await getBook(id_buku);
+        if(book.error!=null){
+            var obj={
+                status:404,
+                message:"Book not found!"
+            };
+            res.status(404).send(obj);
+        }else{
+            const bookmark = await executeQuery(conn, `select * from bookmark where username='${username}' and id_book='${id_buku}'`);
+            if(bookmark.length>0){
                 if((page_number==null || page_number=="") && (note==null || note=="")){
                     var obj={
                         status:400,
@@ -216,11 +218,19 @@ router.put("/:id_buku", async(req,res)=>{
                 if(!fail){
                     var obj={
                         status:200,
-                        message:"Bookmark update!"
+                        message:"Bookmark updated!"
                     };
                     res.status(200).send(obj);
                 }
+            }else{
+                var obj={
+                    status:404,
+                    message:"Bookmark not found!"
+                };
+                res.status(404).send(obj);
             }
+        }
+        conn.release();
     }else{
         var obj={
             status:400,
@@ -238,7 +248,7 @@ router.delete("/:id_buku", async(req,res)=>{
         res.status(401).send("Token not found");
     }
     try{
-        user = jwt.verify(token,"proyek_soa");
+        user = jwt.verify(token,"proyek-soa");
     }catch(err){
         //401 not authorized
         res.status(401).send("Token Invalid");
@@ -246,22 +256,22 @@ router.delete("/:id_buku", async(req,res)=>{
     if(user!=null){
         const conn = await getConnection();
         var id_buku = req.params.id_buku;
-        var username = req.body.username;
+        var username = user.username;
         const book = await getBook(id_buku);
         if(book.error!=null){
             var obj={
-                status:400,
+                status:404,
                 message:"Book not found!"
             };
-            res.status(400).send(obj);
+            res.status(404).send(obj);
         }else{
             var del = await executeQuery(conn, `delete from bookmark where username='${username}' and id_book='${id_buku}'`);
             if(del.affectedRows==0){
                 var obj={
-                    status:400,
+                    status:404,
                     message:"Bookmark not found!"
                 };
-                res.status(400).send(obj);
+                res.status(404).send(obj);
             }else{
                 var obj={
                     status:200,
