@@ -581,18 +581,19 @@
 					"name": "Insert Bookshelf",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwNDIxODY1MzU5LmpwZyIsImlhdCI6MTU5MDQ4NjU5OH0.L4MV5pPU7evtIgD0BafbPRH3yypJkOX-Ka4zS0lg1bA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
 									"key": "book_id",
 									"value": "40",
-									"type": "text"
-								},
-								{
-									"key": "username",
-									"value": "u1",
 									"type": "text"
 								}
 							]
@@ -618,16 +619,16 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwNDIxODY1MzU5LmpwZyIsImlhdCI6MTU5MDQ4NjU5OH0.L4MV5pPU7evtIgD0BafbPRH3yypJkOX-Ka4zS0lg1bA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "u1",
-									"type": "text"
-								}
-							]
+							"urlencoded": []
 						},
 						"url": {
 							"raw": "localhost:3000/bookshelf/",
@@ -674,16 +675,16 @@
 					"name": "Change Bookshelf Privacy",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwNDIxODY1MzU5LmpwZyIsImlhdCI6MTU5MDQ4NjU5OH0.L4MV5pPU7evtIgD0BafbPRH3yypJkOX-Ka4zS0lg1bA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "username",
-									"value": "u1",
-									"type": "text"
-								}
-							]
+							"urlencoded": []
 						},
 						"url": {
 							"raw": "localhost:3000/bookshelf/changePrivacy",
@@ -703,15 +704,16 @@
 					"name": "Delete Bookshelf",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwNDIxODY1MzU5LmpwZyIsImlhdCI6MTU5MDQ4NjU5OH0.L4MV5pPU7evtIgD0BafbPRH3yypJkOX-Ka4zS0lg1bA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
-								{
-									"key": "username",
-									"value": "u1",
-									"type": "text"
-								},
 								{
 									"key": "book_id",
 									"value": "40",
