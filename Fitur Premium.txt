@@ -1,0 +1,3 @@
+1. Bookshelf bisa private
+2. Bisa buat playlist lebih dari 2
+3. Playlist bisa private

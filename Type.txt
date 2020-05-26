@@ -1,0 +1,4 @@
+0 = free user
+1 = premium user
+0 = public
+1 = private

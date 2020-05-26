@@ -1,15 +1,15 @@
 {
 	"info": {
-		"_postman_id": "9161bf36-996d-4048-9b72-9218cca6184b",
-		"name": "Proyek SOA copy",
+		"_postman_id": "11c9d9c4-c0ec-4719-b247-8b3643faa3ca",
+		"name": "Proyek SOA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "user",
+			"name": "User",
 			"item": [
 				{
-					"name": "register",
+					"name": "Register User",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -58,7 +58,7 @@
 					"response": []
 				},
 				{
-					"name": "login",
+					"name": "Login User",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -92,13 +92,13 @@
 					"response": []
 				},
 				{
-					"name": "update",
+					"name": "Update User",
 					"request": {
 						"method": "PUT",
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwMzk4MzI0NDkzLnBuZyIsImlhdCI6MTU5MDM5ODMyN30.ZWexHlrI9uRRJ74oTMbX_czMTG1osm8FYfwMU0UK61k",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQgQ2h1bmciLCJwaG9uZV9udW1iZXIiOiIxIiwidHlwZSI6MCwicHJvZmlsZV9waWN0dXJlIjoiMTU5MDM5ODMyNDQ5My5wbmciLCJpYXQiOjE1OTA0NDk4OTZ9.ZlhEMnXsohk2jbxKTPwZjx3M00cYnX9MdwFel0_mm0Q",
 								"type": "text"
 							}
 						],
@@ -123,7 +123,7 @@
 								{
 									"key": "profile_picture",
 									"type": "file",
-									"src": "/C:/Users/Vincent/Pictures/boo.jpg"
+									"src": "/D:/Users/Tjen/Pictures/cat.png"
 								}
 							]
 						},
@@ -143,7 +143,7 @@
 					"response": []
 				},
 				{
-					"name": "delete ",
+					"name": "Delete User",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -168,7 +168,7 @@
 					"response": []
 				},
 				{
-					"name": "upgrade",
+					"name": "Upgrade User",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -193,7 +193,7 @@
 					"response": []
 				},
 				{
-					"name": "get",
+					"name": "Get User",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -215,410 +215,526 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Create Review",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u2",
-							"type": "text"
-						},
-						{
-							"key": "rating",
-							"value": "2",
-							"type": "text"
-						},
-						{
-							"key": "comment",
-							"value": "Bad",
-							"type": "text"
+			"name": "Search",
+			"item": [
+				{
+					"name": "Get Book Detail by Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDQ3MjF9.uAOWHNNJ9rc7pAx-AQIqS4gdaAmAiMCq_YOeEmSP5EQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/search/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"search",
+								"id",
+								"1"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/review/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Review",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:3000/review",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review"
-					],
-					"query": [
-						{
-							"key": "id_book",
-							"value": "1",
-							"disabled": true
-						},
-						{
-							"key": "username",
-							"value": "u2",
-							"disabled": true
-						},
-						{
-							"key": "rating",
-							"value": "1",
-							"disabled": true
+				{
+					"name": "Search Book by Query",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDQ3MjF9.uAOWHNNJ9rc7pAx-AQIqS4gdaAmAiMCq_YOeEmSP5EQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/search/?query=harry&page=2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "harry"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
 						}
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Update Review",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
+			"name": "Review",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rating",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "Bad",
+									"type": "text"
+								}
+							]
 						},
-						{
-							"key": "rating",
-							"value": "1",
-							"type": "text"
+						"url": {
+							"raw": "localhost:3000/review/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Review",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/review/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								""
+							],
+							"query": [
+								{
+									"key": "id_book",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "u2",
+									"disabled": true
+								},
+								{
+									"key": "rating",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rating",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "WOw!",
+									"type": "text"
+								}
+							]
 						},
-						{
-							"key": "comment",
-							"value": "So bad!",
-							"type": "text"
+						"url": {
+							"raw": "localhost:3000/review/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"1"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/review/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review",
-						"1"
-					]
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/review/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Delete Review",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Insert Bookshelf",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "book_id",
-							"value": "40",
-							"type": "text"
+			"name": "Bookmark",
+			"item": [
+				{
+					"name": "Create Bookmark",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDkyNTJ9.mqPS3J90RZlb1ptsxaDwtPRpU5VNFj7mvCQxGjBpxUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page_number",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "notes",
+									"type": "text"
+								}
+							]
 						},
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
+						"url": {
+							"raw": "localhost:3000/bookmark/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookmark",
+								"1"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/bookshelf/insert",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookshelf",
-						"insert"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get User Bookshelf",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
+				{
+					"name": "Get Bookmark",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDkyNTJ9.mqPS3J90RZlb1ptsxaDwtPRpU5VNFj7mvCQxGjBpxUQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/bookmark/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookmark",
+								"1"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/bookshelf/",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookshelf",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Search User's Bookshelf",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": []
-				},
-				"url": {
-					"raw": "localhost:3000/bookshelf/search/u2",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookshelf",
-						"search",
-						"u2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Change Privacy Bookshelf",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "localhost:3000/bookshelf/changePrivacy",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookshelf",
-						"changePrivacy"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Bookshelf",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
+				{
+					"name": "Update Bookmark",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDkyNTJ9.mqPS3J90RZlb1ptsxaDwtPRpU5VNFj7mvCQxGjBpxUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page_number",
+									"value": "11",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "N",
+									"type": "text"
+								}
+							]
 						},
-						{
-							"key": "book_id",
-							"value": "40",
-							"type": "text"
+						"url": {
+							"raw": "localhost:3000/bookmark/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookmark",
+								"1"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/bookshelf/delete",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookshelf",
-						"delete"
-					]
+				{
+					"name": "Delete Bookmark",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDkyNTJ9.mqPS3J90RZlb1ptsxaDwtPRpU5VNFj7mvCQxGjBpxUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3000/bookmark/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookmark",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Delete Bookmark",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
+			"name": "Bookshelf",
+			"item": [
+				{
+					"name": "Insert Bookshelf",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "book_id",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "u1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/bookshelf/insert",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookshelf",
+								"insert"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/bookmark/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookmark",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Bookmark",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
+				{
+					"name": "Get User Bookshelf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "u1",
+									"type": "text"
+								}
+							]
 						},
-						{
-							"key": "page_number",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "note",
-							"value": "",
-							"type": "text"
+						"url": {
+							"raw": "localhost:3000/bookshelf/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookshelf",
+								""
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/bookmark/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookmark",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Bookmark",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:3000/bookmark/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookmark",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Bookmark",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "username",
-							"value": "u1",
-							"type": "text"
+				{
+					"name": "Search User's Bookshelf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
 						},
-						{
-							"key": "page_number",
-							"value": "10",
-							"type": "text"
-						},
-						{
-							"key": "note",
-							"value": "test",
-							"type": "text"
+						"url": {
+							"raw": "localhost:3000/bookshelf/search/u1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookshelf",
+								"search",
+								"u1"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:3000/bookmark/1",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"bookmark",
-						"1"
-					]
+				{
+					"name": "Change Bookshelf Privacy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "u1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/bookshelf/changePrivacy",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookshelf",
+								"changePrivacy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bookshelf",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "u1",
+									"type": "text"
+								},
+								{
+									"key": "book_id",
+									"value": "40",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/bookshelf/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"bookshelf",
+								"delete"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
