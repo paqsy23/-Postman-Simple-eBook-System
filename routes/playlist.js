@@ -169,27 +169,144 @@ router.get("/search/user/:username", async (req, res) => {
 
 //Search all playlist by name
 router.get("/search/name/:name", async (req, res) => {
-
+    var name = req.params.name;
+    if (!name || name == '') {
+        res.status(400).send("Fill all of the available fields");
+    } else {
+        const h_playlist = await executeQuery(`select * from h_playlist where name like '%${name}%' and type=0`);
+        if (h_playlist.length > 0) {
+            const data_hplaylist = await Promise.all(
+                h_playlist.map(async (e1) => {
+                    const d_playlist = await executeQuery(`select * from d_playlist where id_playlist='${e1.id_playlist}'`);
+                    const data_dplaylist = await Promise.all(
+                        d_playlist.map(async (e2) => {
+                            const book = await getBook(e2.id_book);
+                            const temp2 = {
+                                id:e2.id_book,
+                                title:book.GoodreadsResponse.book[0].title[0],
+                                publication_year:book.GoodreadsResponse.book[0].publication_year[0],
+                                publisher:book.GoodreadsResponse.book[0].publisher[0]
+                            }
+                            return temp2;
+                        })
+                    );
+                    const temp1 = {
+                        name:e1.name,
+                        books:data_dplaylist
+                    }
+                    return temp1;
+                })
+            );
+            res.status(200).send(data_hplaylist);
+        } else res.status(404).send("Playlist not found!");
+    }
 });
 
 //Change name of playlist
 router.put("/changeName", async (req, res) => {
-
+    var playlist_id = req.body.playlist_id, name = req.body.name;
+    if (!playlist_id || playlist_id == '' || !name || name == '') {
+        res.status(400).send("Fill all of the available fields");
+    } else {
+        const token = req.header("x-auth-token");
+        let user = {};
+        if (!token || token == '') return res.status(401).send("Token not found");
+        try {
+            user = jwt.verify(token, "proyek-soa");
+        } catch (error) {
+            return res.status(401).send("Token invalid");
+        }
+        const playlist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}'`);
+        if (playlist.length > 0) {
+            const checkPlaylist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}' and username='${user.username}'`);
+            if (checkPlaylist.length > 0) {
+                const updateName = await executeQuery(`update h_playlist set name='${name}' where id_playlist='${playlist_id}' and username='${user.username}'`);
+                res.status(200).send(`PLaylist's name is already change to '${name}'`);
+            } else res.status(400).send("You're not allowed to access this playlist");
+        } else res.status(404).send("Playlist not found!");
+    }
 });
 
 //Change playlist privacy
 router.put("/changePrivacy", async (req, res) => {
-
+    var playlist_id = req.body.playlist_id;
+    if (!playlist_id || playlist_id == '') {
+        res.status(400).send("Fill all of the available fields");
+    } else {
+        const token = req.header("x-auth-token");
+        let user = {};
+        if (!token || token == '') return res.status(401).send("Token not found");
+        try {
+            user = jwt.verify(token, "proyek-soa");
+        } catch (error) {
+            return res.status(401).send("Token invalid");
+        }
+        if (user.type == 1) {
+            const playlist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}'`);
+            if (playlist.length > 0) {
+                const checkPlaylist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}' and username='${user.username}'`);
+                if (checkPlaylist.length > 0) {
+                    if (checkPlaylist[0].type == 0) var update = await executeQuery(`update h_playlist set type=1 where id_playlist='${playlist_id}' and username='${user.username}'`);
+                    else var update = await executeQuery(`update h_playlist set type=0 where id_playlist='${playlist_id}' and username='${user.username}'`);
+                    res.status(200).send('Change privacy success!');
+                } else res.status(400).send("You're not allowed to access this playlist");
+            } else res.status(404).send("Playlist not found!");
+        } else res.status(400).send("You're not allowed to access this resource");
+    }
 });
 
 //Remove book from playlist
 router.delete("/delete/book/:book_id", async (req, res) => {
-
+    var playlist_id = req.body.playlist_id, book_id = req.params.book_id;
+    if (!playlist_id || playlist_id == '' || !book_id || book_id == '') {
+        res.status(400).send('Fill all of the available fields');
+    } else {
+        const token = req.header("x-auth-token");
+        let user = {};
+        if (!token || token == '') return res.status(401).send("Token not found");
+        try {
+            user = jwt.verify(token, "proyek-soa");
+        } catch (error) {
+            return res.status(401).send("Token invalid");
+        }
+        const playlist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}'`);
+        if (playlist.length > 0) {
+            const checkPlaylist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}' and username='${user.username}'`);
+            if (checkPlaylist.length > 0) {
+                const checkBook = await executeQuery(`select * from d_playlist where id_playlist='${playlist_id}' and id_book=${book_id}`)
+                if (checkBook.length > 0) {
+                    const deleteBook = await executeQuery(`delete from d_playlist where id_playlist='${playlist_id}' and id_book=${book_id}`)
+                    res.status(200).send(`Book with id ${book_id} has deleted from your playlist`);
+                } else res.status(404).send(`Book with id ${book_id} is not in your playlist`);
+            } else res.status(400).send("You're not allowed to access this playlist");
+        } else res.status(404).send("Playlist not found!");
+    }
 });
 
 //Remove playlist
 router.delete("/delete", async (req, res) => {
-
+    var playlist_id = req.body.playlist_id;
+    if (!playlist_id || playlist_id == '') {
+        res.status(400).send('Fill all of the available fields');
+    } else {
+        const token = req.header("x-auth-token");
+        let user = {};
+        if (!token || token == '') return res.status(401).send("Token not found");
+        try {
+            user = jwt.verify(token, "proyek-soa");
+        } catch (error) {
+            return res.status(401).send("Token invalid");
+        }
+        const playlist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}'`);
+        if (playlist.length > 0) {
+            const checkPlaylist = await executeQuery(`select * from h_playlist where id_playlist='${playlist_id}' and username='${user.username}'`);
+            if (checkPlaylist.length > 0) {
+                const deleteBook = await executeQuery(`delete from d_playlist where id_playlist='${playlist_id}'`);
+                const deletePlaylist = await executeQuery(`delete from h_playlist where id_playlist='${playlist_id}'`);
+                res.status(200).send(`Playlist with id ${playlist_id} has been deleted`);
+            } else res.status(400).send("You're not allowed to access this playlist");
+        } else res.status(404).send("Playlist not found!");
+    }
 });
 
 module.exports = router;
