@@ -83,6 +83,8 @@ router.post("/register",async(req,res)=>{
                     res.status(400).send("Username sudah terpakai");
                 }else{
                     const insert = await executeQuery(conn, `insert into user values('${username}','${password}','${name}','${phone_number}',0,'${filename}')`);
+                    // conn.release();
+                    const insertBookshelf = await executeQuery(conn, `insert into h_bookshelf values('${username}',0)`);
                     conn.release();
                     res.status(200).send("akun "+ username + " berhasil dibuat");
                 }
