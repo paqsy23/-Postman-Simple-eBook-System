@@ -846,7 +846,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/playlist/search/user/paqsy",
+							"raw": "localhost:3000/playlist/search/user/paqsy?sort=date",
 							"host": [
 								"localhost"
 							],
@@ -856,6 +856,13 @@
 								"search",
 								"user",
 								"paqsy"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "date",
+									"description": "name/date/uncheck"
+								}
 							]
 						}
 					},
@@ -867,7 +874,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/playlist/search/name/paqsy",
+							"raw": "localhost:3000/playlist/search/name/paq?sort=date",
 							"host": [
 								"localhost"
 							],
@@ -876,7 +883,14 @@
 								"playlist",
 								"search",
 								"name",
-								"paqsy"
+								"paq"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "date",
+									"description": "name/date/uncheck"
+								}
 							]
 						}
 					},

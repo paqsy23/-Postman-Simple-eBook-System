@@ -37,7 +37,7 @@ function executeQuery(query) {
 
 function getUser(username) {
     return new Promise((resolve, reject) => {
-        conn.query(`select * from user where username='${username}'`, (error, result) => {
+        conn.query(`select * from user where username='${username}' and status=0`, (error, result) => {
             if (error) reject(error);
             else resolve(result);
         });
