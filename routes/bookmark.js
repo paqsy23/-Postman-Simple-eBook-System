@@ -33,7 +33,7 @@ function getBook(id_book){
     return new Promise(function (resolve,reject){
         var options = {
             'method':'GET',
-            'url':`https://www.goodreads.com/book/show.xml?key=SJyADY7o2lr2iZmHtCxVBA&id=${id_book}`,
+            'url':`https://www.goodreads.com/book/show.xml?key=${process.env.API_KEY}&id=${id_book}`,
             'headers':{
                 'Content-Type':'application/x-www-form-urlencoded'
             }
@@ -57,13 +57,20 @@ router.post("/:id_buku", async(req,res)=>{
     const token = req.header("x-auth-token");
     let user = {};
     if(!token){
-        res.status(401).send("Token not found");
+        var obj={
+            status:401,
+            message:"Token not found!"
+        };
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
     }catch(err){
-        //401 not authorized
-        res.status(401).send("Token Invalid");
+        var obj={
+            status:401,
+            message:"Token invalid!"
+        };
+        return res.status(401).send(obj);
     }
     if(user!=null){
         var id_buku = req.params.id_buku;
@@ -73,7 +80,7 @@ router.post("/:id_buku", async(req,res)=>{
         console.log(id_buku);
         console.log(page_number);
         console.log(note);
-        if((id_buku!=null || id_buku!="") && (page_number!=null || page_number!="") && (note!=null || note!="")){
+        if((id_buku!=null && id_buku!="") && (page_number!=null && page_number!="") && (note!=null && note!="")){
             const book = await getBook(id_buku);
             if(book.error!=null){
                 var obj={
@@ -119,13 +126,20 @@ router.get("/:id_buku", async(req,res)=>{
     const token = req.header("x-auth-token");
     let user = {};
     if(!token){
-        res.status(401).send("Token not found");
+        var obj={
+            status:401,
+            message:"Token not found!"
+        };
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
     }catch(err){
-        //401 not authorized
-        res.status(401).send("Token Invalid");
+        var obj={
+            status:401,
+            message:"Token invalid!"
+        };
+        return res.status(401).send(obj);
     }
     if(user!=null){
         var id_buku = req.params.id_buku;
@@ -173,13 +187,20 @@ router.put("/:id_buku", async(req,res)=>{
     const token = req.header("x-auth-token");
     let user = {};
     if(!token){
-        res.status(401).send("Token not found");
+        var obj={
+            status:401,
+            message:"Token not found!"
+        };
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
     }catch(err){
-        //401 not authorized
-        res.status(401).send("Token Invalid");
+        var obj={
+            status:401,
+            message:"Token invalid!"
+        };
+        return res.status(401).send(obj);
     }
     if(user!=null){
         const conn = await getConnection();
@@ -245,13 +266,20 @@ router.delete("/:id_buku", async(req,res)=>{
     const token = req.header("x-auth-token");
     let user = {};
     if(!token){
-        res.status(401).send("Token not found");
+        var obj={
+            status:401,
+            message:"Token not found!"
+        };
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
     }catch(err){
-        //401 not authorized
-        res.status(401).send("Token Invalid");
+        var obj={
+            status:401,
+            message:"Token invalid!"
+        };
+        return res.status(401).send(obj);
     }
     if(user!=null){
         const conn = await getConnection();

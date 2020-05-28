@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1de49390-f183-4139-be30-761feabd0012",
+		"_postman_id": "c8723763-e629-49c2-bdb6-d4a1dfad7558",
 		"name": "Proyek SOA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -18,37 +18,36 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "vincent",
+									"value": "u2",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "vc",
+									"value": "2",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "Vincent",
+									"value": "n2",
 									"type": "text"
 								},
 								{
 									"key": "phone_number",
-									"value": "087819111575",
+									"value": "2",
 									"type": "text"
 								},
 								{
 									"key": "profile_picture",
 									"type": "file",
-									"src": "/C:/Users/Vincent/Pictures/detective pikachu.png"
+									"src": "/D:/Users/Tjen/Pictures/cat.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/user/register",
+							"raw": "{{url}}/user/register",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"register"
@@ -67,22 +66,21 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "vincent",
+									"value": "u1",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "vc",
+									"value": "1",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/user/login",
+							"raw": "{{url}}/user/login",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"login"
@@ -98,7 +96,7 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQgQ2h1bmciLCJwaG9uZV9udW1iZXIiOiIxIiwidHlwZSI6MCwicHJvZmlsZV9waWN0dXJlIjoiMTU5MDM5ODMyNDQ5My5wbmciLCJpYXQiOjE1OTA0NDk4OTZ9.ZlhEMnXsohk2jbxKTPwZjx3M00cYnX9MdwFel0_mm0Q",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
 								"type": "text"
 							}
 						],
@@ -107,17 +105,17 @@
 							"formdata": [
 								{
 									"key": "password",
-									"value": "vc",
+									"value": "1",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "Vincent",
+									"value": "n11",
 									"type": "text"
 								},
 								{
 									"key": "phone_number",
-									"value": "087819111575",
+									"value": "11",
 									"type": "text"
 								},
 								{
@@ -128,15 +126,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/user/updateUser/vincent",
+							"raw": "{{url}}/user/updateUser/u1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"updateUser",
-								"vincent"
+								"u1"
 							]
 						}
 					},
@@ -149,19 +146,18 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwMzk4MzI0NDkzLnBuZyIsImlhdCI6MTU5MDM5ODMyN30.ZWexHlrI9uRRJ74oTMbX_czMTG1osm8FYfwMU0UK61k",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/user/vincent",
+							"raw": "{{url}}/user/u3",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
-								"vincent"
+								"u3"
 							]
 						}
 					},
@@ -174,16 +170,15 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbmNlbnQiLCJwYXNzd29yZCI6InZjIiwibmFtZSI6IlZpbmNlbnQiLCJwaG9uZV9udW1iZXIiOiIwODc4MTkxMTE1NzUiLCJ0eXBlIjoxLCJwcm9maWxlX3BpY3R1cmUiOiIxNTkwMzk4MzUxMzk2LmpwZyIsImlhdCI6MTU5MDM5ODk5MX0.gYdM_qhj400-jP0HSIukSsrnsofdveL4GFYLMnFFA3c",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/user/upgrade",
+							"raw": "{{url}}/user/upgrade",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
 								"upgrade"
@@ -198,14 +193,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/user/V",
+							"raw": "{{url}}/user/u",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"user",
-								"V"
+								"u"
 							]
 						}
 					},
@@ -215,7 +209,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Search",
+			"name": "Book",
 			"item": [
 				{
 					"name": "Get Book Detail by Id",
@@ -229,11 +223,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/search/id/1",
+							"raw": "{{url}}/search/id/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"search",
 								"id",
@@ -255,11 +248,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/search/?query=harry&page=2",
+							"raw": "{{url}}/search/?query=harry&page=2",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"search",
 								""
@@ -291,7 +283,7 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
 								"type": "text"
 							}
 						],
@@ -311,11 +303,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/review/1",
+							"raw": "{{url}}/review/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"review",
 								"1"
@@ -331,16 +322,15 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/review/",
+							"raw": "{{url}}/review/",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"review",
 								""
@@ -373,7 +363,7 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
 								"type": "text"
 							}
 						],
@@ -393,11 +383,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/review/1",
+							"raw": "{{url}}/review/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"review",
 								"1"
@@ -413,19 +402,18 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjEiLCJpYXQiOjE1OTA0NDE5ODN9.e_Wk0GqmdYcmi-fCQDVoKNARdqsQQ-iGDh5VROsLul0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/review/1",
+							"raw": "{{url}}/review/2",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"review",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -464,11 +452,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/bookmark/1",
+							"raw": "{{url}}/bookmark/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookmark",
 								"1"
@@ -489,11 +476,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/bookmark/1",
+							"raw": "{{url}}/bookmark/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookmark",
 								"1"
@@ -529,11 +515,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/bookmark/1",
+							"raw": "{{url}}/bookmark/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookmark",
 								"1"
@@ -558,11 +543,10 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/bookmark/1",
+							"raw": "{{url}}/bookmark/1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookmark",
 								"1"
@@ -599,11 +583,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/bookshelf/insert",
+							"raw": "{{url}}/bookshelf/insert",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookshelf",
 								"insert"
@@ -631,11 +614,10 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/bookshelf/",
+							"raw": "{{url}}/bookshelf/",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookshelf",
 								""
@@ -657,11 +639,10 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/bookshelf/search/u1",
+							"raw": "{{url}}/bookshelf/search/u1",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookshelf",
 								"search",
@@ -687,11 +668,10 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "localhost:3000/bookshelf/changePrivacy",
+							"raw": "{{url}}/bookshelf/changePrivacy",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookshelf",
 								"changePrivacy"
@@ -722,11 +702,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/bookshelf/delete",
+							"raw": "{{url}}/bookshelf/delete",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"bookshelf",
 								"delete"
@@ -763,11 +742,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/playlist/create",
+							"raw": "{{url}}/playlist/create",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"create"
@@ -803,11 +781,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/playlist/insert",
+							"raw": "{{url}}/playlist/insert",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"insert"
@@ -828,11 +805,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:3000/playlist",
+							"raw": "{{url}}/playlist",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist"
 							]
@@ -846,11 +822,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/playlist/search/user/paqsy?sort=date",
+							"raw": "{{url}}/playlist/search/user/paqsy?sort=date",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"search",
@@ -874,11 +849,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/playlist/search/name/paq?sort=date",
+							"raw": "{{url}}/playlist/search/name/paq?sort=date",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"search",
@@ -923,11 +897,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/playlist/changeName",
+							"raw": "{{url}}/playlist/changeName",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"changeName"
@@ -958,11 +931,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/playlist/changePrivacy",
+							"raw": "{{url}}/playlist/changePrivacy",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"changePrivacy"
@@ -993,11 +965,10 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/playlist/delete/book/50",
+							"raw": "{{url}}/playlist/delete/book/50",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"delete",
@@ -1030,14 +1001,1203 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/playlist/delete",
+							"raw": "{{url}}/playlist/delete",
 							"host": [
-								"localhost"
+								"{{url}}"
 							],
-							"port": "3000",
 							"path": [
 								"playlist",
 								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Review Testing",
+			"item": [
+				{
+					"name": "Create Review User 1 (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8da9ce8b-b379-4d4c-a5a0-821fd3195314",
+								"exec": [
+									"data = pm.environment.get(\"create_review\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"create_review_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"create_review_id_book\": \"9999999\",\r",
+									"            \"create_review_rating\": \"1\",\r",
+									"            \"create_review_comment\": \"Bad\",\r",
+									"            \"create_review_status_code\": 404,\r",
+									"            \"create_review_body\":{\r",
+									"                \"status\": 404,\r",
+									"                \"message\": \"Book not found!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"create_review_id_book\": \"1\",\r",
+									"            \"create_review_rating\": \"1\",\r",
+									"            \"create_review_comment\": \"Bad\",\r",
+									"            \"create_review_status_code\": 201,\r",
+									"            \"create_review_body\":{\r",
+									"                \"status\": 201,\r",
+									"                \"message\": \"Review for book with id 1 created!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"create_review_id_book\": \"1\",\r",
+									"            \"create_review_rating\": \"3\",\r",
+									"            \"create_review_comment\": \"Not bad\",\r",
+									"            \"create_review_status_code\": 400,\r",
+									"            \"create_review_body\":{\r",
+									"                \"status\": 400,\r",
+									"                \"message\": \"You have reviewed this book!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"create_review_id_book\": \"1\",\r",
+									"            \"create_review_rating\": \"\",\r",
+									"            \"create_review_comment\": \"Not bad\",\r",
+									"            \"create_review_status_code\": 400,\r",
+									"            \"create_review_body\":{\r",
+									"                \"status\": 400,\r",
+									"                \"message\": \"Required field is not filled!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"create_review_id_book\", currentData[\"create_review_id_book\"]);\r",
+									"pm.environment.set(\"create_review_rating\", currentData[\"create_review_rating\"]);\r",
+									"pm.environment.set(\"create_review_comment\", currentData[\"create_review_comment\"]);\r",
+									"pm.environment.set(\"create_review_status_code\", currentData[\"create_review_status_code\"]);\r",
+									"pm.environment.set(\"create_review_body\", currentData[\"create_review_body\"]);\r",
+									"pm.environment.set(\"create_review\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5b6017ed-9159-4bc5-9d68-6f7e7bc86092",
+								"exec": [
+									"data = pm.environment.get(\"create_review\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Create Review User 1 (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Create Review User 2 (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"create_review_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"create_review_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"create_review\");\r",
+									"    pm.environment.unset(\"create_review_id_book\");\r",
+									"    pm.environment.unset(\"create_review_rating\");\r",
+									"    pm.environment.unset(\"create_review_comment\");\r",
+									"    pm.environment.unset(\"create_review_status_code\");\r",
+									"    pm.environment.unset(\"create_review_body\");\r",
+									"    pm.environment.unset(\"create_review_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{create_review_jwt}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rating",
+									"value": "{{create_review_rating}}",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "{{create_review_comment}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/review/{{create_review_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"review",
+								"{{create_review_id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Review User 2 (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "73513826-99c3-4abc-9a33-1bbdf9a6e30e",
+								"exec": [
+									"data = pm.environment.get(\"create_review\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u2\", disabled:false},\r",
+									"            {key: \"password\", value: \"2\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"create_review_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"create_review_id_book\": \"1\",\r",
+									"            \"create_review_rating\": \"3\",\r",
+									"            \"create_review_comment\": \"Not bad\",\r",
+									"            \"create_review_status_code\": 201,\r",
+									"            \"create_review_body\":{\r",
+									"                \"status\": 201,\r",
+									"                \"message\": \"Review for book with id 1 created!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"create_review_id_book\": \"2\",\r",
+									"            \"create_review_rating\": \"5\",\r",
+									"            \"create_review_comment\": \"Good\",\r",
+									"            \"create_review_status_code\": 201,\r",
+									"            \"create_review_body\":{\r",
+									"                \"status\": 201,\r",
+									"                \"message\": \"Review for book with id 2 created!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"create_review_id_book\", currentData[\"create_review_id_book\"]);\r",
+									"pm.environment.set(\"create_review_rating\", currentData[\"create_review_rating\"]);\r",
+									"pm.environment.set(\"create_review_comment\", currentData[\"create_review_comment\"]);\r",
+									"pm.environment.set(\"create_review_status_code\", currentData[\"create_review_status_code\"]);\r",
+									"pm.environment.set(\"create_review_body\", currentData[\"create_review_body\"]);\r",
+									"pm.environment.set(\"create_review\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "69d4b156-71c1-4407-a24c-740cdde5e263",
+								"exec": [
+									"data = pm.environment.get(\"create_review\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Create Review User 2 (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Get Review (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"create_review_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"create_review_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"create_review\");\r",
+									"    pm.environment.unset(\"create_review_id_book\");\r",
+									"    pm.environment.unset(\"create_review_rating\");\r",
+									"    pm.environment.unset(\"create_review_comment\");\r",
+									"    pm.environment.unset(\"create_review_status_code\");\r",
+									"    pm.environment.unset(\"create_review_body\");\r",
+									"    pm.environment.unset(\"create_review_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{create_review_jwt}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rating",
+									"value": "{{create_review_rating}}",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "{{create_review_comment}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/review/{{create_review_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"review",
+								"{{create_review_id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Review (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2d996d3f-47c3-459a-a93d-fc7d2f795511",
+								"exec": [
+									"data = pm.environment.get(\"get_review\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"get_review_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"get_review_id_book\": \"\",\r",
+									"            \"get_review_username\": \"\",\r",
+									"            \"get_review_rating\": \"\",\r",
+									"            \"get_review_status_code\": 200,\r",
+									"            \"get_review_body\":{\r",
+									"                \"status\": 200,\r",
+									"                \"reviews\": [\r",
+									"                    {\r",
+									"                        \"id_book\": 1,\r",
+									"                        \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2006\",\r",
+									"                        \"average_rating\": 2,\r",
+									"                        \"name\": \"n1\",\r",
+									"                        \"rating\": 1,\r",
+									"                        \"comment\": \"Bad\"\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": 1,\r",
+									"                        \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2006\",\r",
+									"                        \"average_rating\": 2,\r",
+									"                        \"name\": \"n2\",\r",
+									"                        \"rating\": 3,\r",
+									"                        \"comment\": \"Not bad\"\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": 2,\r",
+									"                        \"title\": \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2004\",\r",
+									"                        \"average_rating\": 5,\r",
+									"                        \"name\": \"n2\",\r",
+									"                        \"rating\": 5,\r",
+									"                        \"comment\": \"Good\"\r",
+									"                    }\r",
+									"                ]\r",
+									"            }\r",
+									"        },{\r",
+									"            \"get_review_id_book\": \"1\",\r",
+									"            \"get_review_username\": \"\",\r",
+									"            \"get_review_rating\": \"\",\r",
+									"            \"get_review_status_code\": 200,\r",
+									"            \"get_review_body\":{\r",
+									"                \"status\": 200,\r",
+									"                \"reviews\": [\r",
+									"                    {\r",
+									"                        \"id_book\": 1,\r",
+									"                        \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2006\",\r",
+									"                        \"average_rating\": 2,\r",
+									"                        \"name\": \"n1\",\r",
+									"                        \"rating\": 1,\r",
+									"                        \"comment\": \"Bad\"\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": 1,\r",
+									"                        \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2006\",\r",
+									"                        \"average_rating\": 2,\r",
+									"                        \"name\": \"n2\",\r",
+									"                        \"rating\": 3,\r",
+									"                        \"comment\": \"Not bad\"\r",
+									"                    }\r",
+									"                ]\r",
+									"            }\r",
+									"        },{\r",
+									"            \"get_review_id_book\": \"\",\r",
+									"            \"get_review_username\": \"u1\",\r",
+									"            \"get_review_rating\": \"\",\r",
+									"            \"get_review_status_code\": 200,\r",
+									"            \"get_review_body\":{\r",
+									"                \"status\": 200,\r",
+									"                \"reviews\": [\r",
+									"                    {\r",
+									"                        \"id_book\": 1,\r",
+									"                        \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2006\",\r",
+									"                        \"average_rating\": 2,\r",
+									"                        \"name\": \"n1\",\r",
+									"                        \"rating\": 1,\r",
+									"                        \"comment\": \"Bad\"\r",
+									"                    }\r",
+									"                ]\r",
+									"            }\r",
+									"        },{\r",
+									"            \"get_review_id_book\": \"\",\r",
+									"            \"get_review_username\": \"u1\",\r",
+									"            \"get_review_rating\": \"1\",\r",
+									"            \"get_review_status_code\": 200,\r",
+									"            \"get_review_body\":{\r",
+									"                \"status\": 200,\r",
+									"                \"reviews\": [\r",
+									"                    {\r",
+									"                        \"id_book\": 1,\r",
+									"                        \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2006\",\r",
+									"                        \"average_rating\": 2,\r",
+									"                        \"name\": \"n1\",\r",
+									"                        \"rating\": 1,\r",
+									"                        \"comment\": \"Bad\"\r",
+									"                    }\r",
+									"                ]\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"get_review_id_book\", currentData[\"get_review_id_book\"]);\r",
+									"pm.environment.set(\"get_review_rating\", currentData[\"get_review_rating\"]);\r",
+									"pm.environment.set(\"get_review_username\", currentData[\"get_review_username\"]);\r",
+									"pm.environment.set(\"get_review_status_code\", currentData[\"get_review_status_code\"]);\r",
+									"pm.environment.set(\"get_review_body\", currentData[\"get_review_body\"]);\r",
+									"pm.environment.set(\"get_review\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "47eb8b70-2d46-4dc5-899d-9898d70ad188",
+								"exec": [
+									"data = pm.environment.get(\"get_review\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Get Review (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Update Review (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"get_review_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"get_review_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"get_review\");\r",
+									"    pm.environment.unset(\"get_review_id_book\");\r",
+									"    pm.environment.unset(\"get_review_rating\");\r",
+									"    pm.environment.unset(\"get_review_username\");\r",
+									"    pm.environment.unset(\"get_review_status_code\");\r",
+									"    pm.environment.unset(\"get_review_body\");\r",
+									"    pm.environment.unset(\"get_review_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{get_review_jwt}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/review/?id_book={{get_review_id_book}}&username={{get_review_username}}&rating={{get_review_rating}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"review",
+								""
+							],
+							"query": [
+								{
+									"key": "id_book",
+									"value": "{{get_review_id_book}}"
+								},
+								{
+									"key": "username",
+									"value": "{{get_review_username}}"
+								},
+								{
+									"key": "rating",
+									"value": "{{get_review_rating}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "be04991d-2994-460b-bdf7-c043fa7b24de",
+								"exec": [
+									"data = pm.environment.get(\"update_review\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u2\", disabled:false},\r",
+									"            {key: \"password\", value: \"2\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"update_review_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"update_review_id_book\": \"9999999\",\r",
+									"            \"update_review_rating\": \"4\",\r",
+									"            \"update_review_comment\": \"Nice one\",\r",
+									"            \"update_review_status_code\": 404,\r",
+									"            \"update_review_body\":{\r",
+									"                \"status\": 404,\r",
+									"                \"message\": \"Book not found!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"update_review_id_book\": \"1\",\r",
+									"            \"update_review_rating\": \"4\",\r",
+									"            \"update_review_comment\": \"Nice one\",\r",
+									"            \"update_review_status_code\": 200,\r",
+									"            \"update_review_body\":{\r",
+									"                \"status\": 200,\r",
+									"                \"message\": \"Review updated!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"update_review_id_book\": \"3\",\r",
+									"            \"update_review_rating\": \"1\",\r",
+									"            \"update_review_comment\": \"Bad\",\r",
+									"            \"update_review_status_code\": 404,\r",
+									"            \"update_review_body\":{\r",
+									"                \"status\": 404,\r",
+									"                \"message\": \"You never review this book!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"update_review_id_book\": \"1\",\r",
+									"            \"update_review_rating\": \"\",\r",
+									"            \"update_review_comment\": \"\",\r",
+									"            \"update_review_status_code\": 400,\r",
+									"            \"update_review_body\":{\r",
+									"                \"status\": 400,\r",
+									"                \"message\": \"Required field is not filled!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"update_review_id_book\", currentData[\"update_review_id_book\"]);\r",
+									"pm.environment.set(\"update_review_rating\", currentData[\"update_review_rating\"]);\r",
+									"pm.environment.set(\"update_review_comment\", currentData[\"update_review_comment\"]);\r",
+									"pm.environment.set(\"update_review_status_code\", currentData[\"update_review_status_code\"]);\r",
+									"pm.environment.set(\"update_review_body\", currentData[\"update_review_body\"]);\r",
+									"pm.environment.set(\"update_review\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "71f7c722-64b5-4d9f-9e2e-e5c0a9902550",
+								"exec": [
+									"data = pm.environment.get(\"update_review\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Update Review (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Delete Review (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"update_review_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"update_review_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"update_review\");\r",
+									"    pm.environment.unset(\"update_review_id_book\");\r",
+									"    pm.environment.unset(\"update_review_rating\");\r",
+									"    pm.environment.unset(\"update_review_comment\");\r",
+									"    pm.environment.unset(\"update_review_status_code\");\r",
+									"    pm.environment.unset(\"update_review_body\");\r",
+									"    pm.environment.unset(\"update_review_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{update_review_jwt}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rating",
+									"value": "{{update_review_rating}}",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "{{update_review_comment}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/review/{{update_review_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"review",
+								"{{update_review_id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Review (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e43ed573-15cd-444e-b76e-10b35e5c0a4c",
+								"exec": [
+									"data = pm.environment.get(\"delete_review\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u2\", disabled:false},\r",
+									"            {key: \"password\", value: \"2\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"delete_review_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"delete_review_id_book\": \"9999999\",\r",
+									"            \"delete_review_status_code\": 404,\r",
+									"            \"delete_review_body\":{\r",
+									"                \"status\": 404,\r",
+									"                \"message\": \"Book not found!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"delete_review_id_book\": \"3\",\r",
+									"            \"delete_review_status_code\": 404,\r",
+									"            \"delete_review_body\":{\r",
+									"                \"status\": 404,\r",
+									"                \"message\": \"Review not found!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"delete_review_id_book\": \"1\",\r",
+									"            \"delete_review_status_code\": 200,\r",
+									"            \"delete_review_body\":{\r",
+									"                \"status\": 200,\r",
+									"                \"message\": \"Review deleted!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"delete_review_id_book\": \"2\",\r",
+									"            \"delete_review_status_code\": 200,\r",
+									"            \"delete_review_body\":{\r",
+									"                \"status\": 200,\r",
+									"                \"message\": \"Review deleted!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"delete_review_id_book\", currentData[\"delete_review_id_book\"]);\r",
+									"pm.environment.set(\"delete_review_status_code\", currentData[\"delete_review_status_code\"]);\r",
+									"pm.environment.set(\"delete_review_body\", currentData[\"delete_review_body\"]);\r",
+									"pm.environment.set(\"delete_review\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f3dc2049-70ac-432b-b2c6-bfa9d1b1c254",
+								"exec": [
+									"data = pm.environment.get(\"delete_review\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Delete Review (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"delete_review_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"delete_review_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"delete_review\");\r",
+									"    pm.environment.unset(\"delete_review_id_book\");\r",
+									"    pm.environment.unset(\"delete_review_status_code\");\r",
+									"    pm.environment.unset(\"delete_review_body\");\r",
+									"    pm.environment.unset(\"delete_review_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{delete_review_jwt}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url}}/review/{{delete_review_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"review",
+								"{{delete_review_id_book}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Book Testing",
+			"item": [
+				{
+					"name": "Get Book Detail by Id (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d205804b-f312-404d-8506-e73a6ce72296",
+								"exec": [
+									"data = pm.environment.get(\"get_book\");\r",
+									"url = pm.environment.get(\"url\") + '/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            { key: \"username\", value: \"u1\", disabled: false },\r",
+									"            { key: \"password\", value: \"1\", disabled: false },\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"get_book_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if (!data || data.length <= 0) {\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"get_book_id_book\": \"1\",\r",
+									"            \"get_book_status_code\": 200,\r",
+									"            \"get_book_body\": {\r",
+									"                \"status\": 200,\r",
+									"                \"book\": {\r",
+									"                    \"id_book\": \"1\",\r",
+									"                    \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                    \"author\": \"J.K. Rowling\",\r",
+									"                    \"year\": \"2006\",\r",
+									"                    \"average_rating\": 1,\r",
+									"                    \"description\": \"The war against Voldemort is not going well; even Muggle governments are noticing. Ron scans the obituary pages of the <i>Daily Prophet</i>, looking for familiar names. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses.<br /><br />And yet . . .<br /><br />As in all wars, life goes on. The Weasley twins expand their business. Sixth-year students learn to Apparate - and lose a few eyebrows in the process. Teenagers flirt and fight and fall in love. Classes are never straightforward, through Harry receives some extraordinary help from the mysterious Half-Blood Prince.<br /><br />So it's the home front that takes center stage in the multilayered sixth installment of the story of Harry Potter. Here at Hogwarts, Harry will search for the full and complete story of the boy who became Lord Voldemort - and thereby find what may be his only vulnerability.\"\r",
+									"                }\r",
+									"            }\r",
+									"        }, {\r",
+									"            \"get_book_id_book\": \"9999999\",\r",
+									"            \"get_book_status_code\": 404,\r",
+									"            \"get_book_body\": {\r",
+									"                \"status\": 404,\r",
+									"                \"message\": \"Book not found!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"get_book_id_book\", currentData[\"get_book_id_book\"]);\r",
+									"pm.environment.set(\"get_book_status_code\", currentData[\"get_book_status_code\"]);\r",
+									"pm.environment.set(\"get_book_body\", currentData[\"get_book_body\"]);\r",
+									"pm.environment.set(\"get_book\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5f0c9076-119f-42d1-a99b-2b253a56451f",
+								"exec": [
+									"data = pm.environment.get(\"get_book\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Get Book Detail by Id (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Search Book by Query (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"get_book_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"get_book_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"get_book\");\r",
+									"    pm.environment.unset(\"get_book_id_book\");\r",
+									"    pm.environment.unset(\"get_book_status_code\");\r",
+									"    pm.environment.unset(\"get_book_body\");\r",
+									"    pm.environment.unset(\"get_book_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{get_book_jwt}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/search/id/{{get_book_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"search",
+								"id",
+								"{{get_book_id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Book by Query (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "88c8265e-9cd8-43b9-8646-0bca698bb891",
+								"exec": [
+									"data = pm.environment.get(\"get_book\");\r",
+									"url = pm.environment.get(\"url\") + '/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            { key: \"username\", value: \"u1\", disabled: false },\r",
+									"            { key: \"password\", value: \"1\", disabled: false },\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"get_book_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if (!data || data.length <= 0) {\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"get_book_query\": \"harry\",\r",
+									"            \"get_book_page\": \"1\",\r",
+									"            \"get_book_status_code\": 200,\r",
+									"            \"get_book_body\": {\r",
+									"                \"status\": 200,\r",
+									"                \"books\": [\r",
+									"                    {\r",
+									"                        \"id_book\": \"3\",\r",
+									"                        \"title\": \"Harry Potter and the Sorcerer's Stone (Harry Potter, #1)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"1997\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"5\",\r",
+									"                        \"title\": \"Harry Potter and the Prisoner of Azkaban (Harry Potter, #3)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"1999\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"2\",\r",
+									"                        \"title\": \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2003\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"6\",\r",
+									"                        \"title\": \"Harry Potter and the Goblet of Fire (Harry Potter, #4)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2000\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"1\",\r",
+									"                        \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2005\",\r",
+									"                        \"average_rating\": 1\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"29056083\",\r",
+									"                        \"title\": \"Harry Potter and the Cursed Child: Parts One and Two (Harry Potter, #8)\",\r",
+									"                        \"author\": \"John Tiffany\",\r",
+									"                        \"year\": \"2016\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"136251\",\r",
+									"                        \"title\": \"Harry Potter and the Deathly Hallows (Harry Potter, #7)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2007\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"862041\",\r",
+									"                        \"title\": \"Harry Potter Series Box Set (Harry Potter, #1-7)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2007\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"79885\",\r",
+									"                        \"title\": \"The Lincoln Lawyer (Mickey Haller, #1; Harry Bosch Universe, #15)\",\r",
+									"                        \"author\": \"Michael Connelly\",\r",
+									"                        \"year\": \"2005\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"32508\",\r",
+									"                        \"title\": \"The Black Echo (Harry Bosch, #1; Harry Bosch Universe, #1)\",\r",
+									"                        \"author\": \"Michael Connelly\",\r",
+									"                        \"year\": \"1992\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"426775\",\r",
+									"                        \"title\": \"Chasing Harry Winston\",\r",
+									"                        \"author\": \"Lauren Weisberger\",\r",
+									"                        \"year\": \"2008\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"9572203\",\r",
+									"                        \"title\": \"The Snowman (Harry Hole, #7)\",\r",
+									"                        \"author\": \"Jo Nesbø\",\r",
+									"                        \"year\": \"2007\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"15881\",\r",
+									"                        \"title\": \"Harry Potter and the Chamber of Secrets (Harry Potter, #2)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"1998\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"465226\",\r",
+									"                        \"title\": \"The Redbreast (Harry Hole, #3)\",\r",
+									"                        \"author\": \"Jo Nesbø\",\r",
+									"                        \"year\": \"2000\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"32506\",\r",
+									"                        \"title\": \"The Poet (Jack McEvoy, #1; Harry Bosch Universe, #5)\",\r",
+									"                        \"author\": \"Michael Connelly\",\r",
+									"                        \"year\": \"1996\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"1317181\",\r",
+									"                        \"title\": \"Harry Potter and the Order of the Phoenix (Harry Potter, #5, Part 1)\",\r",
+									"                        \"author\": \"J.K. Rowling\",\r",
+									"                        \"year\": \"2003\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"24244\",\r",
+									"                        \"title\": \"The Black Ice (Harry Bosch, #2; Harry Bosch Universe, #2)\",\r",
+									"                        \"author\": \"Michael Connelly\",\r",
+									"                        \"year\": \"1993\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"3522419\",\r",
+									"                        \"title\": \"Nemesis (Harry Hole, #4)\",\r",
+									"                        \"author\": \"Jo Nesbø\",\r",
+									"                        \"year\": \"2002\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"20706317\",\r",
+									"                        \"title\": \"The First Fifteen Lives of Harry August\",\r",
+									"                        \"author\": \"Claire North\",\r",
+									"                        \"year\": \"2014\",\r",
+									"                        \"average_rating\": null\r",
+									"                    },\r",
+									"                    {\r",
+									"                        \"id_book\": \"2761626\",\r",
+									"                        \"title\": \"The Brass Verdict (Harry Bosch, #14; Mickey Haller, #2; Harry Bosch Universe, #18)\",\r",
+									"                        \"author\": \"Michael Connelly\",\r",
+									"                        \"year\": \"2008\",\r",
+									"                        \"average_rating\": null\r",
+									"                    }\r",
+									"                ]\r",
+									"            }\r",
+									"        }, {\r",
+									"            \"get_book_query\": \" \",\r",
+									"            \"get_book_page\": \"1\",\r",
+									"            \"get_book_status_code\": 404,\r",
+									"            \"get_book_body\": {\r",
+									"                \"status\": 404,\r",
+									"                \"message\": \"Books not found!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"get_book_query\", currentData[\"get_book_query\"]);\r",
+									"pm.environment.set(\"get_book_page\", currentData[\"get_book_page\"]);\r",
+									"pm.environment.set(\"get_book_status_code\", currentData[\"get_book_status_code\"]);\r",
+									"pm.environment.set(\"get_book_body\", currentData[\"get_book_body\"]);\r",
+									"pm.environment.set(\"get_book\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6aa6a1cb-c8ff-4bed-9876-419b9039e012",
+								"exec": [
+									"data = pm.environment.get(\"get_book\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Search Book by Query (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"get_book_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"get_book_body\"));\r",
+									"    // if(pm.variables.get(\"get_book_body\").books!=null){\r",
+									"    //     pm.expect(jsonData).to.eql(pm.variables.get(\"get_book_body\"));\r",
+									"    // }\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"get_book\");\r",
+									"    pm.environment.unset(\"get_book_query\");\r",
+									"    pm.environment.unset(\"get_book_page\");\r",
+									"    pm.environment.unset(\"get_book_status_code\");\r",
+									"    pm.environment.unset(\"get_book_body\");\r",
+									"    pm.environment.unset(\"get_book_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{get_book_jwt}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/search/?query={{get_book_query}}&page={{get_book_page}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "{{get_book_query}}"
+								},
+								{
+									"key": "page",
+									"value": "{{get_book_page}}"
+								}
 							]
 						}
 					},

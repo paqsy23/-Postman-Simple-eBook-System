@@ -4,7 +4,7 @@ const review = require("./routes/review");
 const bookmark = require("./routes/bookmark");
 const user = require("./routes/user.js");
 const playlist = require("./routes/playlist");
-const search = require("./routes/search.js");
+const book = require("./routes/book.js");
 const app = express();
 
 app.use(cors());
@@ -14,8 +14,7 @@ app.use("/review", review);
 app.use("/bookmark", bookmark);
 app.use("/user",user);
 app.use("/playlist", playlist);
-app.use("/search",search);
+app.use("/search",book);
 
-app.listen(3000, () => {
-    console.log("Listening on port 3000...");
-});
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log('Listening on port '+port+'...'));

@@ -114,7 +114,11 @@ router.post("/login", async(req,res)=>{
                 "profile_picture":check[0].profile_picture
             }   ,"proyek-soa");
             conn.release();
-            res.status(200).send(token);
+            var obj={
+                status:200,
+                token:token
+            };
+            res.status(200).send(obj);
         }else{
             conn.release();
             res.status(400).send("akun tidak ditemukan");

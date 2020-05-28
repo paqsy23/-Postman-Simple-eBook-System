@@ -33,7 +33,7 @@ function getBook(id_book){
     return new Promise(function (resolve,reject){
         var options = {
             'method':'GET',
-            'url':`https://www.goodreads.com/book/show.xml?key=SJyADY7o2lr2iZmHtCxVBA&id=${id_book}`,
+            'url':`https://www.goodreads.com/book/show.xml?key=${process.env.API_KEY}&id=${id_book}`,
             'headers':{
                 'Content-Type':'application/x-www-form-urlencoded'
             }
@@ -61,7 +61,7 @@ router.post("/:id_book", async (req, res)  => {
             status:401,
             message:"Token not found!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
@@ -70,14 +70,14 @@ router.post("/:id_book", async (req, res)  => {
             status:401,
             message:"Token invalid!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     if(user!=null){
         var id_book = req.params.id_book;
         var username = user.username;
         var rating = req.body.rating;
         var comment = req.body.comment;
-        if((rating!=null || rating!="") && (id_book!=null || id_book!="")){
+        if(!(rating==null || rating=="") && !(id_book==null || id_book=="")){
             const book = await getBook(id_book);
             if(book.error!=null){
                 var obj={
@@ -91,10 +91,10 @@ router.post("/:id_book", async (req, res)  => {
                 if(check.length<=0){
                     const insert = await executeQuery(conn, `insert into review values('${id_book}','${username}',${rating},'${comment}')`);
                     var obj={
-                        status:200,
+                        status:201,
                         message:`Review for book with id ${id_book} created!`
                     };
-                    res.status(200).send(obj);
+                    res.status(201).send(obj);
                 }else{
                     var obj={
                         status:400,
@@ -129,7 +129,7 @@ router.get("/", async (req, res) => {
             status:401,
             message:"Token not found!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
@@ -138,7 +138,7 @@ router.get("/", async (req, res) => {
             status:401,
             message:"Token invalid!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     if(user!=null){
         var username = req.query.username;
@@ -233,7 +233,7 @@ router.put("/:id_book", async (req, res) => {
             status:401,
             message:"Token not found!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
@@ -242,7 +242,7 @@ router.put("/:id_book", async (req, res) => {
             status:401,
             message:"Token invalid!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     if(user!=null){
         const conn = await getConnection();
@@ -317,7 +317,7 @@ router.delete("/:id_book", async (req, res) => {
             status:401,
             message:"Token not found!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     try{
         user = jwt.verify(token,"proyek-soa");
@@ -326,7 +326,7 @@ router.delete("/:id_book", async (req, res) => {
             status:401,
             message:"Token invalid!"
         };
-        res.status(401).send(obj);
+        return res.status(401).send(obj);
     }
     if(user!=null){
         const conn = await getConnection();

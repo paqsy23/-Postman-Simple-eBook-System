@@ -1,10 +1,12 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const config = {
     database: {
-        host: "localhost",
-        user: "root",
-        password: "",
-        port: 3306,
-        database: "db_proyek_soa"
+        host: process.env.DB_HOST_LOCAL,
+        user: process.env.DB_USER_LOCAL,
+        password: process.env.DB_PASS_LOCAL,
+        port: process.env.DB_PORT_LOCAL,
+        database: process.env.DB_NAME_LOCAL
     }
 }
 

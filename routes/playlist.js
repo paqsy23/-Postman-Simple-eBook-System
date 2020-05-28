@@ -8,7 +8,7 @@ function getBook(id_book){
     return new Promise(function (resolve,reject){
         var options = {
             'method':'GET',
-            'url':`https://www.goodreads.com/book/show.xml?key=hhVpTAfyhwEbJ13DccFxTw&id=${id_book}`,
+            'url':`https://www.goodreads.com/book/show.xml?key=${process.env.API_KEY}&id=${id_book}`,
             'headers':{
                 'Content-Type':'application/x-www-form-urlencoded'
             }

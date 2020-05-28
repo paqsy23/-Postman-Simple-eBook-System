@@ -33,7 +33,7 @@ function getBook(id_book){
     return new Promise(function (resolve,reject){
         var options = {
             'method':'GET',
-            'url':`https://www.goodreads.com/book/show.xml?key=SJyADY7o2lr2iZmHtCxVBA&id=${id_book}`,
+            'url':`https://www.goodreads.com/book/show.xml?key=${process.env.API_KEY}&id=${id_book}`,
             'headers':{
                 'Content-Type':'application/x-www-form-urlencoded'
             }
@@ -56,7 +56,7 @@ function searchBook(query,page){
     return new Promise(function (resolve,reject){
         var options = {
             'method':'GET',
-            'url':`https://www.goodreads.com/search/index.xml?key=SJyADY7o2lr2iZmHtCxVBA&q=${query}&page=${page}`,
+            'url':`https://www.goodreads.com/search/index.xml?key=${process.env.API_KEY}&q=${query}&page=${page}`,
             'headers':{
                 'Content-Type':'application/x-www-form-urlencoded'
             }
