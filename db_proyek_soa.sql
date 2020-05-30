@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 10:09 AM
+-- Generation Time: May 30, 2020 at 08:16 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -30,7 +30,6 @@ USE `db_proyek_soa`;
 -- Table structure for table `bookmark`
 --
 
-DROP TABLE IF EXISTS `bookmark`;
 CREATE TABLE `bookmark` (
   `username` varchar(15) NOT NULL,
   `id_book` int(11) NOT NULL,
@@ -44,11 +43,18 @@ CREATE TABLE `bookmark` (
 -- Table structure for table `d_bookshelf`
 --
 
-DROP TABLE IF EXISTS `d_bookshelf`;
 CREATE TABLE `d_bookshelf` (
   `username` varchar(15) NOT NULL,
   `id_book` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `d_bookshelf`
+--
+
+INSERT INTO `d_bookshelf` (`username`, `id_book`) VALUES
+('tester', 40),
+('vincent', 40);
 
 -- --------------------------------------------------------
 
@@ -56,7 +62,6 @@ CREATE TABLE `d_bookshelf` (
 -- Table structure for table `d_playlist`
 --
 
-DROP TABLE IF EXISTS `d_playlist`;
 CREATE TABLE `d_playlist` (
   `id_playlist` varchar(10) NOT NULL,
   `id_book` int(11) NOT NULL
@@ -68,11 +73,19 @@ CREATE TABLE `d_playlist` (
 -- Table structure for table `h_bookshelf`
 --
 
-DROP TABLE IF EXISTS `h_bookshelf`;
 CREATE TABLE `h_bookshelf` (
   `username` varchar(15) NOT NULL,
   `type` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `h_bookshelf`
+--
+
+INSERT INTO `h_bookshelf` (`username`, `type`) VALUES
+('tester', 0),
+('u1', 1),
+('vincent', 0);
 
 -- --------------------------------------------------------
 
@@ -80,14 +93,11 @@ CREATE TABLE `h_bookshelf` (
 -- Table structure for table `h_playlist`
 --
 
-DROP TABLE IF EXISTS `h_playlist`;
 CREATE TABLE `h_playlist` (
   `id_playlist` varchar(10) NOT NULL,
   `username` varchar(15) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `type` int(1) NOT NULL,
-  `created_date` datetime NOT NULL,
-  `modified_date` datetime NOT NULL
+  `type` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -96,7 +106,6 @@ CREATE TABLE `h_playlist` (
 -- Table structure for table `review`
 --
 
-DROP TABLE IF EXISTS `review`;
 CREATE TABLE `review` (
   `id_book` int(11) NOT NULL,
   `username` varchar(15) NOT NULL,
@@ -110,7 +119,6 @@ CREATE TABLE `review` (
 -- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `username` varchar(15) NOT NULL,
   `password` varchar(50) NOT NULL,
@@ -118,8 +126,17 @@ CREATE TABLE `user` (
   `phone_number` varchar(20) NOT NULL,
   `type` int(1) NOT NULL,
   `profile_picture` varchar(100) NOT NULL,
-  `status` int(11) NOT NULL
+  `transaction_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `password`, `name`, `phone_number`, `type`, `profile_picture`, `transaction_id`) VALUES
+('tester', '1', 'Vincent', '087819111575', 0, '1590487381223.png', ''),
+('u1', 'vc', 'Vincent', '087819111575', 1, '1590486501610.png', ''),
+('vincent', 'vc', 'Vincent', '087819111575', 1, '1590486501610.png', '');
 
 --
 -- Indexes for dumped tables
