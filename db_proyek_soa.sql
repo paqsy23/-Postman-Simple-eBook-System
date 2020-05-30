@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 10:09 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Host: by1lwyweakf4kfgc2fxn-mysql.services.clever-cloud.com:3306
+-- Generation Time: May 30, 2020 at 04:15 PM
+-- Server version: 8.0.13-3
+-- PHP Version: 7.2.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,10 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_proyek_soa`
+-- Database: `by1lwyweakf4kfgc2fxn`
 --
-CREATE DATABASE IF NOT EXISTS `db_proyek_soa` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `db_proyek_soa`;
 
 -- --------------------------------------------------------
 
@@ -36,7 +34,7 @@ CREATE TABLE `bookmark` (
   `id_book` int(11) NOT NULL,
   `page_number` varchar(20) NOT NULL,
   `note` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -48,7 +46,7 @@ DROP TABLE IF EXISTS `d_bookshelf`;
 CREATE TABLE `d_bookshelf` (
   `username` varchar(15) NOT NULL,
   `id_book` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -60,7 +58,7 @@ DROP TABLE IF EXISTS `d_playlist`;
 CREATE TABLE `d_playlist` (
   `id_playlist` varchar(10) NOT NULL,
   `id_book` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -72,7 +70,7 @@ DROP TABLE IF EXISTS `h_bookshelf`;
 CREATE TABLE `h_bookshelf` (
   `username` varchar(15) NOT NULL,
   `type` int(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -88,7 +86,7 @@ CREATE TABLE `h_playlist` (
   `type` int(1) NOT NULL,
   `created_date` datetime NOT NULL,
   `modified_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -102,7 +100,7 @@ CREATE TABLE `review` (
   `username` varchar(15) NOT NULL,
   `rating` int(11) NOT NULL,
   `comment` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -112,14 +110,15 @@ CREATE TABLE `review` (
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `username` varchar(15) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `username` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone_number` varchar(20) NOT NULL,
   `type` int(1) NOT NULL,
   `profile_picture` varchar(100) NOT NULL,
+  `transaction_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Indexes for dumped tables
