@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c8723763-e629-49c2-bdb6-d4a1dfad7558",
+		"_postman_id": "7fc1d34b-e288-4789-89e5-f73f9681a234",
 		"name": "Proyek SOA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1025,7 +1025,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8da9ce8b-b379-4d4c-a5a0-821fd3195314",
+								"id": "f0fe592d-8cbf-4560-92fd-dbcd35b65108",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1098,7 +1098,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5b6017ed-9159-4bc5-9d68-6f7e7bc86092",
+								"id": "3dc59d72-8b26-4c96-a786-22957b8a431e",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"flag=false;\r",
@@ -1176,7 +1176,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "73513826-99c3-4abc-9a33-1bbdf9a6e30e",
+								"id": "68fd8a66-2fbb-48cf-9c5a-9074c1094d5b",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1231,7 +1231,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "69d4b156-71c1-4407-a24c-740cdde5e263",
+								"id": "b0bb3f0e-2670-4f12-a899-0a49e792a140",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"flag=false;\r",
@@ -1309,7 +1309,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "2d996d3f-47c3-459a-a93d-fc7d2f795511",
+								"id": "49964d65-31b0-4793-966b-886f4ea1d73e",
 								"exec": [
 									"data = pm.environment.get(\"get_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1456,7 +1456,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "47eb8b70-2d46-4dc5-899d-9898d70ad188",
+								"id": "66e77673-053f-422b-9215-e0668066d5cd",
 								"exec": [
 									"data = pm.environment.get(\"get_review\");\r",
 									"flag=false;\r",
@@ -1540,7 +1540,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "be04991d-2994-460b-bdf7-c043fa7b24de",
+								"id": "8fa4fcce-f236-4233-80cf-f8dfd81670fe",
 								"exec": [
 									"data = pm.environment.get(\"update_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1613,7 +1613,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "71f7c722-64b5-4d9f-9e2e-e5c0a9902550",
+								"id": "46691bd3-b0ca-44f6-8347-209fa5785f17",
 								"exec": [
 									"data = pm.environment.get(\"update_review\");\r",
 									"flag=false;\r",
@@ -1691,7 +1691,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e43ed573-15cd-444e-b76e-10b35e5c0a4c",
+								"id": "c7023cbb-8978-4a78-9ae9-39fb96c56615",
 								"exec": [
 									"data = pm.environment.get(\"delete_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1754,7 +1754,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f3dc2049-70ac-432b-b2c6-bfa9d1b1c254",
+								"id": "8848b92c-c575-454f-997c-b73d25d394c1",
 								"exec": [
 									"data = pm.environment.get(\"delete_review\");\r",
 									"flag=false;\r",
@@ -1824,7 +1824,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d205804b-f312-404d-8506-e73a6ce72296",
+								"id": "3d0e8187-8fcd-4581-bb3e-3afa0e7c5a87",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"url = pm.environment.get(\"url\") + '/user/login';\r",
@@ -1880,7 +1880,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5f0c9076-119f-42d1-a99b-2b253a56451f",
+								"id": "c5330c6a-a8cc-45cf-9d35-12a46854d2c6",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"flag=false;\r",
@@ -1942,7 +1942,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "88c8265e-9cd8-43b9-8646-0bca698bb891",
+								"id": "367de412-15aa-4d8e-93ce-c6d49f8ca032",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"url = pm.environment.get(\"url\") + '/user/login';\r",
@@ -2135,7 +2135,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6aa6a1cb-c8ff-4bed-9876-419b9039e012",
+								"id": "54d868f2-c49c-432b-b1b1-e3cbd7740735",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"flag=false;\r",
@@ -2198,6 +2198,541 @@
 									"key": "page",
 									"value": "{{get_book_page}}"
 								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Bookmark Testing",
+			"item": [
+				{
+					"name": "Create Bookmark Testing",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "b3c52ca4-b177-415d-9fa2-40360ae38b3d",
+								"exec": [
+									"data = pm.environment.get(\"create_bookmark\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"create_bookmark_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"create_bookmark_id_book\" : \"9999999\",\r",
+									"            \"create_bookmark_page_number\" : \"10\",\r",
+									"            \"create_bookmark_note\" : \"Notes\",\r",
+									"            \"create_bookmark_status_code\": 404,\r",
+									"            \"create_bookmark_body\" : {\r",
+									"                \"status\" : 404,\r",
+									"                \"message\" : \"Book not found!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"create_bookmark_id_book\" : \"1\",\r",
+									"            \"create_bookmark_page_number\" : \"10\",\r",
+									"            \"create_bookmark_note\" : \"Notes\",\r",
+									"            \"create_bookmark_status_code\": 200,\r",
+									"            \"create_bookmark_body\" : {\r",
+									"                \"status\" : 200,\r",
+									"                \"message\" : \"Bookmark for book with id 1 created!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"create_bookmark_id_book\" : \"1\",\r",
+									"            \"create_bookmark_page_number\" : \"10\",\r",
+									"            \"create_bookmark_note\" : \"Notes\",\r",
+									"            \"create_bookmark_status_code\": 400,\r",
+									"            \"create_bookmark_body\" : {\r",
+									"                \"status\" : 400,\r",
+									"                \"message\" : \"You have bookmark this book!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"create_bookmark_id_book\" : \"1\",\r",
+									"            \"create_bookmark_page_number\" : \"10\",\r",
+									"            \"create_bookmark_note\" : \"\",\r",
+									"            \"create_bookmark_status_code\": 400,\r",
+									"            \"create_bookmark_body\" : {\r",
+									"                \"status\" : 400,\r",
+									"                \"message\" : \"Required field is not filled!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"create_bookmark_id_book\", currentData[\"create_bookmark_id_book\"]);\r",
+									"pm.environment.set(\"create_bookmark_page_number\", currentData[\"create_bookmark_page_number\"]);\r",
+									"pm.environment.set(\"create_bookmark_note\", currentData[\"create_bookmark_note\"]);\r",
+									"pm.environment.set(\"create_bookmark_status_code\", currentData[\"create_bookmark_status_code\"]);\r",
+									"pm.environment.set(\"create_bookmark_body\", currentData[\"create_bookmark_body\"]);\r",
+									"pm.environment.set(\"create_bookmark\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ebe0dc79-1a51-41cb-a182-0b5bc66899fc",
+								"exec": [
+									"data = pm.environment.get(\"create_bookmark\");\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Create Bookmark\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Create Bookmark\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"create_bookmark_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"create_bookmark_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"create_bookmark\");\r",
+									"    pm.environment.unset(\"create_bookmark_id_book\");\r",
+									"    pm.environment.unset(\"create_bookmark_page_number\");\r",
+									"    pm.environment.unset(\"create_bookmark_notes\");\r",
+									"    pm.environment.unset(\"create_bookmark_status_code\");\r",
+									"    pm.environment.unset(\"create_bookmark_body\");\r",
+									"    pm.environment.unset(\"create_bookmark_jwt\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{create_review_jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page_number",
+									"value": "{{create_bookmark_page_number}}",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "{{create_bookmark_note}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/bookmark/{{create_bookmark_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookmark",
+								"{{create_bookmark_id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookmark Testing",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fe016fec-6561-4419-b88e-0fe8aef87361",
+								"exec": [
+									"data = pm.environment.get(\"get_bookmark\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"get_bookmark_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"get_bookmark_id_book\" : \"\",\r",
+									"            \"get_bookmark_status_code\" : 404,\r",
+									"            \"get_bookmark_body\" : {\r",
+									"                \"status\" : 404,\r",
+									"                \"message\": \"Book not found!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"get_bookmark_id_book\" : \"1\",\r",
+									"            \"get_bookmark_status_code\" : 200,\r",
+									"            \"get_bookmark_body\" : {\r",
+									"                \"status\" : 200,\r",
+									"                \"bookmark\": {\r",
+									"                    \"id_book\" : 1,\r",
+									"                    \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                    \"author\": \"J.K. Rowling\",\r",
+									"                    \"year\": \"2006\",\r",
+									"                    \"page_number\": 10,\r",
+									"                    \"note\": \"Notes\"\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"get_bookmark_id_book\", currentData[\"get_bookmark_id_book\"]);\r",
+									"pm.environment.set(\"get_bookmark_status_code\", currentData[\"get_bookmark_status_code\"]);\r",
+									"pm.environment.set(\"get_bookmark_body\", currentData[\"get_bookmark_body\"]);\r",
+									"pm.environment.set(\"get_bookmark\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "ed8fa45a-7db6-4ab5-9308-afddcfcd5a4b",
+								"exec": [
+									"data = pm.environment.get(\"get_bookmark\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Get Bookmark\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Get Bookmark\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"get_bookmark_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"get_bookmark_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"get_bookmark\");\r",
+									"    pm.environment.unset(\"get_bookmark_id_book\");\r",
+									"    pm.environment.unset(\"get_bookmark_status_code\");\r",
+									"    pm.environment.unset(\"get_bookmark_body\");\r",
+									"    pm.environment.unset(\"get_bookmark_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{get_bookmark_jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/bookmark/{{get_bookmark_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookmark",
+								"{{get_bookmark_id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bookmark Testing",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5af38a96-484f-4eb4-ae1f-e23d2b096350",
+								"exec": [
+									"data = pm.environment.get(\"update_bookmark\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"update_bookmark_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"update_bookmark_id_book\" : \"9999999\",\r",
+									"            \"update_bookmark_page_number\" : \"10\",\r",
+									"            \"update_bookmark_note\" : \"Notes\",\r",
+									"            \"update_bookmark_status_code\" : 404,\r",
+									"            \"update_bookmark_body\" : {\r",
+									"                \"status\" : 404,\r",
+									"                \"message\" : \"Book not found!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"update_bookmark_id_book\" : \"1\",\r",
+									"            \"update_bookmark_page_number\" : \"11\",\r",
+									"            \"update_bookmark_note\" : \"note update\",\r",
+									"            \"update_bookmark_status_code\" : 200,\r",
+									"            \"update_bookmark_body\" : {\r",
+									"                \"status\" : 200,\r",
+									"                \"message\" : \"Bookmark updated!\"\r",
+									"            }\r",
+									"        },{\r",
+									"            \"update_bookmark_id_book\" : \"1\",\r",
+									"            \"update_bookmark_page_number\" : \"\",\r",
+									"            \"update_bookmark_note\" : \"\",\r",
+									"            \"update_bookmark_status_code\" : 400,\r",
+									"            \"update_bookmark_body\" : {\r",
+									"                \"status\" : 400,\r",
+									"                \"message\" : \"Required field is not filled!\"\r",
+									"            }\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"update_bookmark_id_book\", currentData[\"update_bookmark_id_book\"]);\r",
+									"pm.environment.set(\"update_bookmark_page_number\", currentData[\"update_bookmark_page_number\"]);\r",
+									"pm.environment.set(\"update_bookmark_note\", currentData[\"update_bookmark_note\"]);\r",
+									"pm.environment.set(\"update_bookmark_status_code\", currentData[\"update_bookmark_status_code\"]);\r",
+									"pm.environment.set(\"update_bookmark_body\", currentData[\"update_bookmark_body\"]);\r",
+									"pm.environment.set(\"update_bookmark\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "1029d983-345d-45a6-8a5a-724638b8b9b0",
+								"exec": [
+									"data = pm.environment.get(\"update_bookmark\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Update Bookmark\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Update Bookmark\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"update_bookmark_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"update_bookmark_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"update_bookmark\");\r",
+									"    pm.environment.unset(\"update_bookmark_id_book\");\r",
+									"    pm.environment.unset(\"update_bookmark_page_number\");\r",
+									"    pm.environment.unset(\"update_bookmark_note\");\r",
+									"    pm.environment.unset(\"update_bookmark_status_code\");\r",
+									"    pm.environment.unset(\"update_bookmark_body\");\r",
+									"    pm.environment.unset(\"update_bookmark_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{update_bookmark_jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page_number",
+									"value": "{{update_bookmark_page_number}}",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "{{update_bookmark_note}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/bookmark/{{update_bookmark_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookmark",
+								"{{update_bookmark_id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bookmark Testing",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "74cb92df-ae12-4758-a910-027f0b908900",
+								"exec": [
+									"data = pm.environment.get(\"delete_bookmark\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"delete_bookmark_jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"delete_bookmark_id_book\" : \"9999999\",\r",
+									"            \"delete_bookmark_status_code\" : 400,\r",
+									"            \"delete_bookmark_body\" : {\r",
+									"                \"status\" : 400,\r",
+									"                \"message\" : \"Book not found!\"\r",
+									"            } \r",
+									"        },{\r",
+									"            \"delete_bookmark_id_book\" : \"1\",\r",
+									"            \"delete_bookmark_status_code\" : 200,\r",
+									"            \"delete_bookmark_body\" : {\r",
+									"                \"status\" : 200,\r",
+									"                \"message\" : \"Bookmark deleted!\"\r",
+									"            } \r",
+									"        },{\r",
+									"            \"delete_bookmark_id_book\" : \"31\",\r",
+									"            \"delete_bookmark_status_code\" : 404,\r",
+									"            \"delete_bookmark_body\" : {\r",
+									"                \"status\" : 404,\r",
+									"                \"message\" : \"Bookmark not found!\"\r",
+									"            } \r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"delete_bookmark_id_book\", currentData[\"delete_bookmark_id_book\"]);\r",
+									"pm.environment.set(\"delete_bookmark_status_code\", currentData[\"delete_bookmark_status_code\"]);\r",
+									"pm.environment.set(\"delete_bookmark_body\", currentData[\"delete_bookmark_body\"]);\r",
+									"pm.environment.set(\"delete_bookmark\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "aff62b37-495a-4d25-abff-855e599c913f",
+								"exec": [
+									"data = pm.environment.get(\"delete_bookmark\");\r",
+									"flag=false;\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Delete Bookmark\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Delete Bookmark\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"delete_bookmark_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"delete_bookmark_body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"delete_bookmark\");\r",
+									"    pm.environment.unset(\"delete_bookmark_id_book\");\r",
+									"    pm.environment.unset(\"delete_bookmark_status_code\");\r",
+									"    pm.environment.unset(\"delete_bookmark_body\");\r",
+									"    pm.environment.unset(\"delete_bookmark_jwt\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{delete_bookmark_jwt}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/bookmark/{{delete_bookmark_id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"bookmark",
+								"{{delete_bookmark_id_book}}"
 							]
 						}
 					},
