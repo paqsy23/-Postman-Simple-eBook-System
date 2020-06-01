@@ -368,34 +368,36 @@ router.put("/upgrade", async(req,res)=>{
 
 //notification handler midtrans
 router.post("/cekBayar",async(req,res)=>{
-    let receivedJson = req.body;
-    core.transaction.notification(receivedJson)
-        .then((transactionStatusObject)=>{
-        let transaction_id = transactionStatusObject.transaction_id;
-        let transactionStatus = transactionStatusObject.transaction_status;
-        let fraudStatus = transactionStatusObject.fraud_status;
+    // let receivedJson = req.body;
+    // core.transaction.notification(receivedJson)
+    //     .then(async(transactionStatusObject)=>{
+    //     let transaction_id = transactionStatusObject.transaction_id;
+    //     let transactionStatus = transactionStatusObject.transaction_status;
+    //     let fraudStatus = transactionStatusObject.fraud_status;
 
-        if (transactionStatus == 'capture'){
-            if (fraudStatus == 'challenge'){
-                // TODO set transaction status on your databaase to 'challenge'
-            } else if (fraudStatus == 'accept'){
-                // TODO set transaction status on your databaase to 'success'
-                const conn = await getConnection();
-                const upgradeUser = await executeQuery(conn,`update user set type=1 where transaction_id='${transaction_id}'`);
-                conn.release();
-                console.log("upgrade user");
-                res.status(200).send("upgrade user berhasil");
-            }
-        } else if (transactionStatus == 'settlement'){
-            // TODO set transaction status on your databaase to 'success'
-            const conn = await getConnection();
-            const upgradeUser = await executeQuery(conn,`update user set type=1 where transaction_id='${transaction_id}'`);
-            conn.release();
-            console.log("upgrade user");
-            res.status(200).send("upgrade user berhasil");
-        }
-        res.status(400).send("tidak terjadi upgrade");
-        });
+    //     if (transactionStatus == 'capture'){
+    //         if (fraudStatus == 'challenge'){
+    //             // TODO set transaction status on your databaase to 'challenge'
+    //         } else if (fraudStatus == 'accept'){
+    //             // TODO set transaction status on your databaase to 'success'
+    //             const conn = await getConnection();
+    //             const upgradeUser = await executeQuery(conn,`update user set type=1 where transaction_id='${transaction_id}'`);
+    //             conn.release();
+    //             console.log("upgrade user");
+    //             res.status(200).send("upgrade user berhasil");
+    //         }
+    //     } else if (transactionStatus == 'settlement'){
+    //         // TODO set transaction status on your databaase to 'success'
+    //         const conn = await getConnection();
+    //         const upgradeUser = await executeQuery(conn,`update user set type=1 where transaction_id='${transaction_id}'`);
+    //         conn.release();
+    //         console.log("upgrade user");
+    //         res.status(200).send("upgrade user berhasil");
+    //     }
+    //     res.status(200).send("tidak terjadi apa apa");
+    //     });
+    console.log(req);
+    res.status(200).send("masuk");
 });
 
 //get user by keyword
