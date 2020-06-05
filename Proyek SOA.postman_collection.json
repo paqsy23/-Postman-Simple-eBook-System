@@ -3575,7 +3575,7 @@
 					"response": []
 				},
 				{
-					"name": "Show user's playlist",
+					"name": "Show user's playlist (Testing)",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -3695,6 +3695,884 @@
 							],
 							"path": [
 								"playlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Playlist by Username (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "03a01a13-0316-462b-8e90-b3aab1022c5d",
+								"exec": [
+									"data = pm.environment.get(\"playlist_search_user\");\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"status_code\": 400,\r",
+									"            \"username\" : \"\",\r",
+									"            \"orderby\" : \"date\",\r",
+									"            \"body\" : \"Fill all of the available fields\"\r",
+									"        },{\r",
+									"            \"status_code\": 404,\r",
+									"            \"username\" : \"lololol\",\r",
+									"            \"orderby\" : \"date\",\r",
+									"            \"body\" : \"User not found!\"\r",
+									"        },{\r",
+									"            \"status_code\": 200,\r",
+									"            \"username\" : \"u2\",\r",
+									"            \"orderby\" : \"date\",\r",
+									"            \"body\" : \"His/her doesn't has playlist\"\r",
+									"        },{\r",
+									"            \"status_code\": 200,\r",
+									"            \"username\" : \"u1\",\r",
+									"            \"orderby\" : \"\",\r",
+									"            \"body\" : [\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 1\",\r",
+									"                    \"created_date\" : \"23/02/2020 12:34\",\r",
+									"                    \"modified_date\" : \"24/02/2020 10:10\",\r",
+									"                    \"books\" : [\r",
+									"                        {\r",
+									"                            \"id\" : 1,\r",
+									"                            \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                            \"publication_year\": \"2006\",\r",
+									"                            \"publisher\": \"Scholastic Inc.\"\r",
+									"                        },\r",
+									"                        {\r",
+									"                            \"id\" : 2,\r",
+									"                            \"title\" : \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                            \"publication_year\" : \"2004\",\r",
+									"                            \"publisher\" : \"Scholastic Inc.\"\r",
+									"                        }\r",
+									"                    ]\r",
+									"                },\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 2\",\r",
+									"                    \"created_date\" : \"24/02/2020 15:30\",\r",
+									"                    \"modified_date\" : \"01/03/2020 01:23\",\r",
+									"                    \"books\" : []\r",
+									"                }\r",
+									"            ]\r",
+									"        },{\r",
+									"            \"status_code\": 200,\r",
+									"            \"username\" : \"u1\",\r",
+									"            \"orderby\" : \"name\",\r",
+									"            \"body\" : [\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 1\",\r",
+									"                    \"created_date\" : \"23/02/2020 12:34\",\r",
+									"                    \"modified_date\" : \"24/02/2020 10:10\",\r",
+									"                    \"books\" : [\r",
+									"                        {\r",
+									"                            \"id\" : 1,\r",
+									"                            \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                            \"publication_year\": \"2006\",\r",
+									"                            \"publisher\": \"Scholastic Inc.\"\r",
+									"                        },\r",
+									"                        {\r",
+									"                            \"id\" : 2,\r",
+									"                            \"title\" : \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                            \"publication_year\" : \"2004\",\r",
+									"                            \"publisher\" : \"Scholastic Inc.\"\r",
+									"                        }\r",
+									"                    ]\r",
+									"                },\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 2\",\r",
+									"                    \"created_date\" : \"24/02/2020 15:30\",\r",
+									"                    \"modified_date\" : \"01/03/2020 01:23\",\r",
+									"                    \"books\" : []\r",
+									"                }\r",
+									"            ]\r",
+									"        },{\r",
+									"            \"status_code\": 200,\r",
+									"            \"username\" : \"u1\",\r",
+									"            \"orderby\" : \"date\",\r",
+									"            \"body\" : [\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 2\",\r",
+									"                    \"created_date\" : \"24/02/2020 15:30\",\r",
+									"                    \"modified_date\" : \"01/03/2020 01:23\",\r",
+									"                    \"books\" : []\r",
+									"                },{\r",
+									"                    \"name\" : \"Coba Playlist 1\",\r",
+									"                    \"created_date\" : \"23/02/2020 12:34\",\r",
+									"                    \"modified_date\" : \"24/02/2020 10:10\",\r",
+									"                    \"books\" : [\r",
+									"                        {\r",
+									"                            \"id\" : 1,\r",
+									"                            \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                            \"publication_year\": \"2006\",\r",
+									"                            \"publisher\": \"Scholastic Inc.\"\r",
+									"                        },\r",
+									"                        {\r",
+									"                            \"id\" : 2,\r",
+									"                            \"title\" : \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                            \"publication_year\" : \"2004\",\r",
+									"                            \"publisher\" : \"Scholastic Inc.\"\r",
+									"                        }\r",
+									"                    ]\r",
+									"                }\r",
+									"            ]\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"status_code\", currentData[\"status_code\"]);\r",
+									"pm.environment.set(\"username\", currentData[\"username\"]);\r",
+									"pm.environment.set(\"orderby\", currentData[\"orderby\"]);\r",
+									"pm.environment.set(\"body\", currentData[\"body\"]);\r",
+									"pm.environment.set(\"playlist_search_user\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "03108c3a-1813-44c3-9a4b-5fbd1a4b99c0",
+								"exec": [
+									"data = pm.environment.get(\"playlist_search_user\");\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Search Playlist by Username (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Search Playlist by Playlist's Name (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"playlist_search_user\");\r",
+									"    pm.environment.unset(\"username\");\r",
+									"    pm.environment.unset(\"orderby\");\r",
+									"    pm.environment.unset(\"status_code\");\r",
+									"    pm.environment.unset(\"body\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/playlist/search/user/{{username}}?sort={{orderby}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"playlist",
+								"search",
+								"user",
+								"{{username}}"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "{{orderby}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Playlist by Playlist's Name (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c709ffd7-47fa-4ae9-b4e4-1e9fe907b045",
+								"exec": [
+									"data = pm.environment.get(\"playlist_search_name\");\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"status_code\": 400,\r",
+									"            \"name\" : \"\",\r",
+									"            \"orderby\" : \"date\",\r",
+									"            \"body\" : \"Fill all of the available fields\"\r",
+									"        },{\r",
+									"            \"status_code\": 404,\r",
+									"            \"name\" : \"lololol\",\r",
+									"            \"orderby\" : \"date\",\r",
+									"            \"body\" : \"Playlist not found!\"\r",
+									"        },{\r",
+									"            \"status_code\": 200,\r",
+									"            \"name\" : \"play\",\r",
+									"            \"orderby\" : \"\",\r",
+									"            \"body\" : [\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 1\",\r",
+									"                    \"created_date\" : \"23/02/2020 12:34\",\r",
+									"                    \"modified_date\" : \"24/02/2020 10:10\",\r",
+									"                    \"books\" : [\r",
+									"                        {\r",
+									"                            \"id\" : 1,\r",
+									"                            \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                            \"publication_year\": \"2006\",\r",
+									"                            \"publisher\": \"Scholastic Inc.\"\r",
+									"                        },\r",
+									"                        {\r",
+									"                            \"id\" : 2,\r",
+									"                            \"title\" : \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                            \"publication_year\" : \"2004\",\r",
+									"                            \"publisher\" : \"Scholastic Inc.\"\r",
+									"                        }\r",
+									"                    ]\r",
+									"                },\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 2\",\r",
+									"                    \"created_date\" : \"24/02/2020 15:30\",\r",
+									"                    \"modified_date\" : \"01/03/2020 01:23\",\r",
+									"                    \"books\" : []\r",
+									"                }\r",
+									"            ]\r",
+									"        },{\r",
+									"            \"status_code\": 200,\r",
+									"            \"name\" : \"play\",\r",
+									"            \"orderby\" : \"name\",\r",
+									"            \"body\" : [\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 1\",\r",
+									"                    \"created_date\" : \"23/02/2020 12:34\",\r",
+									"                    \"modified_date\" : \"24/02/2020 10:10\",\r",
+									"                    \"books\" : [\r",
+									"                        {\r",
+									"                            \"id\" : 1,\r",
+									"                            \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                            \"publication_year\": \"2006\",\r",
+									"                            \"publisher\": \"Scholastic Inc.\"\r",
+									"                        },\r",
+									"                        {\r",
+									"                            \"id\" : 2,\r",
+									"                            \"title\" : \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                            \"publication_year\" : \"2004\",\r",
+									"                            \"publisher\" : \"Scholastic Inc.\"\r",
+									"                        }\r",
+									"                    ]\r",
+									"                },\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 2\",\r",
+									"                    \"created_date\" : \"24/02/2020 15:30\",\r",
+									"                    \"modified_date\" : \"01/03/2020 01:23\",\r",
+									"                    \"books\" : []\r",
+									"                }\r",
+									"            ]\r",
+									"        },{\r",
+									"            \"status_code\": 200,\r",
+									"            \"name\" : \"play\",\r",
+									"            \"orderby\" : \"date\",\r",
+									"            \"body\" : [\r",
+									"                {\r",
+									"                    \"name\" : \"Coba Playlist 2\",\r",
+									"                    \"created_date\" : \"24/02/2020 15:30\",\r",
+									"                    \"modified_date\" : \"01/03/2020 01:23\",\r",
+									"                    \"books\" : []\r",
+									"                },{\r",
+									"                    \"name\" : \"Coba Playlist 1\",\r",
+									"                    \"created_date\" : \"23/02/2020 12:34\",\r",
+									"                    \"modified_date\" : \"24/02/2020 10:10\",\r",
+									"                    \"books\" : [\r",
+									"                        {\r",
+									"                            \"id\" : 1,\r",
+									"                            \"title\": \"Harry Potter and the Half-Blood Prince (Harry Potter, #6)\",\r",
+									"                            \"publication_year\": \"2006\",\r",
+									"                            \"publisher\": \"Scholastic Inc.\"\r",
+									"                        },\r",
+									"                        {\r",
+									"                            \"id\" : 2,\r",
+									"                            \"title\" : \"Harry Potter and the Order of the Phoenix (Harry Potter, #5)\",\r",
+									"                            \"publication_year\" : \"2004\",\r",
+									"                            \"publisher\" : \"Scholastic Inc.\"\r",
+									"                        }\r",
+									"                    ]\r",
+									"                }\r",
+									"            ]\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"status_code\", currentData[\"status_code\"]);\r",
+									"pm.environment.set(\"name\", currentData[\"name\"]);\r",
+									"pm.environment.set(\"orderby\", currentData[\"orderby\"]);\r",
+									"pm.environment.set(\"body\", currentData[\"body\"]);\r",
+									"pm.environment.set(\"playlist_search_name\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "02f81896-3358-43d3-bc36-0f878fff6393",
+								"exec": [
+									"data = pm.environment.get(\"playlist_search_name\");\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Search Playlist by Playlist's Name (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Update Playlist's Name (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"playlist_search_name\");\r",
+									"    pm.environment.unset(\"username\");\r",
+									"    pm.environment.unset(\"orderby\");\r",
+									"    pm.environment.unset(\"status_code\");\r",
+									"    pm.environment.unset(\"body\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/playlist/search/name/{{name}}?sort={{orderby}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"playlist",
+								"search",
+								"name",
+								"{{name}}"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "{{orderby}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Playlist's Name (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e7f3fc8b-b6ed-44fa-9575-284820aa5f78",
+								"exec": [
+									"data = pm.environment.get(\"playlist_change_name\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"id_playlist\" : \"PL999\",\r",
+									"            \"name\" : \"Coba Ganti\",\r",
+									"            \"status_code\": 404,\r",
+									"            \"body\" : \"Playlist not found!\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"PL001\",\r",
+									"            \"id_book\" : \"Coba Ganti\",\r",
+									"            \"status_code\": 200,\r",
+									"            \"body\" : \"Playlist's name is already change to 'Coba Ganti'\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"\",\r",
+									"            \"name\" : \"\",\r",
+									"            \"status_code\": 400,\r",
+									"            \"body\" : \"Fill all of the available fields!\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"id_playlist\", currentData[\"id_playlist\"]);\r",
+									"pm.environment.set(\"name\", currentData[\"name\"]);\r",
+									"pm.environment.set(\"status_code\", currentData[\"status_code\"]);\r",
+									"pm.environment.set(\"body\", currentData[\"body\"]);\r",
+									"pm.environment.set(\"playlist_change_name\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "1707eb1c-9849-4b4b-870b-2a27abcca5f7",
+								"exec": [
+									"data = pm.environment.get(\"playlist_change_name\");\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Update Playlist's Name (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Update Privacy Playlist (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"playlist_change_name\");\r",
+									"    pm.environment.unset(\"id_playlist\");\r",
+									"    pm.environment.unset(\"name\");\r",
+									"    pm.environment.unset(\"status_code\");\r",
+									"    pm.environment.unset(\"body\");\r",
+									"    pm.environment.unset(\"jwt\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "playlist_id",
+									"value": "{{id_playlist}}",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "{{name}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/playlist/changeName",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"playlist",
+								"changeName"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Privacy Playlist (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ddd5bafd-0dec-4262-89c8-f4c7af2df556",
+								"exec": [
+									"data = pm.environment.get(\"playlist_change_privacy\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"id_playlist\" : \"PL999\",\r",
+									"            \"status_code\": 404,\r",
+									"            \"body\" : \"Playlist not found!\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"PL001\",\r",
+									"            \"status_code\": 200,\r",
+									"            \"body\" : \"Change privacy success\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"\",\r",
+									"            \"status_code\": 400,\r",
+									"            \"body\" : \"Fill all of the available fields!\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"id_playlist\", currentData[\"id_playlist\"]);\r",
+									"pm.environment.set(\"status_code\", currentData[\"status_code\"]);\r",
+									"pm.environment.set(\"body\", currentData[\"body\"]);\r",
+									"pm.environment.set(\"playlist_change_privacy\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "742bd731-3bde-441c-b0f9-af65cdfc63cf",
+								"exec": [
+									"data = pm.environment.get(\"playlist_change_privacy\");\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Update Privacy Playlist (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Remove Book From Playlist (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"playlist_change_privacy\");\r",
+									"    pm.environment.unset(\"id_playlist\");\r",
+									"    pm.environment.unset(\"status_code\");\r",
+									"    pm.environment.unset(\"body\");\r",
+									"    pm.environment.unset(\"jwt\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "playlist_id",
+									"value": "{{id_playlist}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/playlist/changePrivacy",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"playlist",
+								"changePrivacy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Book From Playlist (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7dcf674f-0dce-4b1e-8fbc-33832d11542d",
+								"exec": [
+									"data = pm.environment.get(\"playlist_remove_book\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"id_playlist\" : \"PL999\",\r",
+									"            \"id_book\" : \"1\",\r",
+									"            \"status_code\": 404,\r",
+									"            \"body\" : \"Playlist not found!\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"PL001\",\r",
+									"            \"id_book\" : \"999999\",\r",
+									"            \"status_code\": 404,\r",
+									"            \"body\" : \"Book with id 999999 is not in your playlist\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"PL001\",\r",
+									"            \"id_book\" : \"1\",\r",
+									"            \"status_code\": 200,\r",
+									"            \"body\" : \"Book with id 1 has deleted from your playlist\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"\",\r",
+									"            \"id_book\" : \"\",\r",
+									"            \"status_code\": 400,\r",
+									"            \"body\" : \"Fill all of the available fields!\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"id_playlist\", currentData[\"id_playlist\"]);\r",
+									"pm.environment.set(\"id_book\", currentData[\"id_book\"]);\r",
+									"pm.environment.set(\"status_code\", currentData[\"status_code\"]);\r",
+									"pm.environment.set(\"body\", currentData[\"body\"]);\r",
+									"pm.environment.set(\"playlist_remove_book\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "6949a63d-a248-4392-9482-5c988c6406d3",
+								"exec": [
+									"data = pm.environment.get(\"playlist_remove_book\");\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Remove Book From Playlsit (Testing)\");\r",
+									"}else{\r",
+									"    postman.setNextRequest(\"Delete Playlist (Testing)\");\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"playlist_remove_book\");\r",
+									"    pm.environment.unset(\"id_playlist\");\r",
+									"    pm.environment.unset(\"id_book\");\r",
+									"    pm.environment.unset(\"status_code\");\r",
+									"    pm.environment.unset(\"body\");\r",
+									"    pm.environment.unset(\"jwt\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "playlist_id",
+									"value": "{{id_playlist}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/playlist/delete/book/{{id_book}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"playlist",
+								"delete",
+								"book",
+								"{{id_book}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Playlist (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "31775b78-0ef5-4452-b967-0346c0e88f0f",
+								"exec": [
+									"data = pm.environment.get(\"playlist_delete\");\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"pm.sendRequest({\r",
+									"    url: url,\r",
+									"    method: 'POST',\r",
+									"    body: {\r",
+									"        mode: 'urlencoded',\r",
+									"        urlencoded: [\r",
+									"            {key: \"username\", value: \"u1\", disabled:false},\r",
+									"            {key: \"password\", value: \"1\", disabled:false},\r",
+									"        ]\r",
+									"    }\r",
+									"}, function (err, response) {\r",
+									"    pm.environment.set(\"jwt\", response.json().token);\r",
+									"});\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"id_playlist\" : \"PL999\",\r",
+									"            \"status_code\": 404,\r",
+									"            \"body\" : \"Playlist not found!\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"PL001\",\r",
+									"            \"status_code\": 200,\r",
+									"            \"body\" : \"Playlist with id PL001 has been deleted\"\r",
+									"        },{\r",
+									"            \"id_playlist\" : \"\",\r",
+									"            \"status_code\": 400,\r",
+									"            \"body\" : \"Fill all of the available fields!\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"id_playlist\", currentData[\"id_playlist\"]);\r",
+									"pm.environment.set(\"status_code\", currentData[\"status_code\"]);\r",
+									"pm.environment.set(\"body\", currentData[\"body\"]);\r",
+									"pm.environment.set(\"playlist_delete\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "98e01e71-7eba-4b15-ac83-1422a0809685",
+								"exec": [
+									"data = pm.environment.get(\"playlist_delete\");\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Remove Book From Playlsit (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned data is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.eql(pm.variables.get(\"body\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"playlist_delete\");\r",
+									"    pm.environment.unset(\"id_playlist\");\r",
+									"    pm.environment.unset(\"status_code\");\r",
+									"    pm.environment.unset(\"body\");\r",
+									"    pm.environment.unset(\"jwt\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "playlist_id",
+									"value": "{{id_playlist}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/playlist/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"playlist",
+								"delete"
 							]
 						}
 					},
