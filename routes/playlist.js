@@ -60,7 +60,7 @@ router.post("/create", async (req, res) => {
         }
         const totalPlaylist = await executeQuery(`select * from h_playlist where username='${user.username}'`);
         if (user.type == 0 && totalPlaylist.length >= 2) {
-            res.status(400).send("You already have 2 playlist, please upgrade your account");
+            res.status(400).send("You already have 2 playlists, please upgrade your account");
         } else {
             var id = "PL";
             var num = await executeQuery('select max(substr(id_playlist,3)) as num from h_playlist');

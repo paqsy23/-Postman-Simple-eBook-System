@@ -124,7 +124,7 @@ router.get("/search/:target", async (req, res) => {
                     res.status(200).send(data);
                 } else res.status(200).send("His/her bookshelf is empty");
             } else res.status(423).send("Sorry, his/her bookshelf is private");
-        } else res.status(400).send("Username not found");
+        } else res.status(404).send("Username not found");
     }
 });
 
