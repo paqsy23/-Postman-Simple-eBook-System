@@ -1,0 +1,16 @@
+Anggota kelompok:
+217116641 - Paqsy Jalasukma
+217116642 - Patrick Tjendika
+217116656 - Stefan Ruben A.
+217116664 - Vincent Chung
+
+Dokumentasi: https://gitlab.com/patricktjendika2521999/proyek-soa
+
+Program: https://github.com/patricktjendika/proyek-soa
+
+Ada 2 link git karena pertama kali mengerjakannya di gitlab dan hostingnya di github.
+
+Hosted: proyek-soa-stts.herokuapp.com
+Doc. Design: https://documenter.getpostman.com/view/10351287/Szzj9Hy6?version=latest
+
+Testing dilakukan di local. Testing buku bisa fail karena hasil request dari 3rd party agak random.
