@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "7fc1d34b-e288-4789-89e5-f73f9681a234",
+		"_postman_id": "da8b8ff9-9f47-4f72-be66-d183a91f0257",
 		"name": "Proyek SOA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -18,7 +18,7 @@
 							"formdata": [
 								{
 									"key": "username",
-									"value": "u2",
+									"value": "u3",
 									"type": "text"
 								},
 								{
@@ -39,7 +39,7 @@
 								{
 									"key": "profile_picture",
 									"type": "file",
-									"src": "/D:/Users/Tjen/Pictures/cat.png"
+									"src": "/C:/Users/Vincent/Pictures/detective pikachu.png"
 								}
 							]
 						},
@@ -66,12 +66,12 @@
 							"urlencoded": [
 								{
 									"key": "username",
-									"value": "u1",
+									"value": "u10",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "1",
+									"value": "10",
 									"type": "text"
 								}
 							]
@@ -96,7 +96,7 @@
 						"header": [
 							{
 								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxIiwicGFzc3dvcmQiOiIxIiwibmFtZSI6Im4xIiwicGhvbmVfbnVtYmVyIjoiMSIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTA2OTMwMDAwOTIucG5nIiwiaWF0IjoxNTkwNjkzMDU5fQ.-RyCawxyJXIBF7LVOSjTExx_QRanKna371nTXXAOUZE",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InUxMCIsInBhc3N3b3JkIjoiMTAiLCJuYW1lIjoibjEwIiwicGhvbmVfbnVtYmVyIjoiMTAxMCIsInR5cGUiOjAsInByb2ZpbGVfcGljdHVyZSI6IjE1OTEwMjU4ODEzNjguSlBHIiwiaWF0IjoxNTkxNTk2NTAyfQ.6mZP0Wm37El1bHBPE68xXgU94JY5Ue87W9VvSJQnF48",
 								"type": "text"
 							}
 						],
@@ -105,35 +105,35 @@
 							"formdata": [
 								{
 									"key": "password",
-									"value": "1",
+									"value": "10",
 									"type": "text"
 								},
 								{
 									"key": "name",
-									"value": "n11",
+									"value": "n10",
 									"type": "text"
 								},
 								{
 									"key": "phone_number",
-									"value": "11",
+									"value": "1010",
 									"type": "text"
 								},
 								{
 									"key": "profile_picture",
 									"type": "file",
-									"src": "/D:/Users/Tjen/Pictures/cat.png"
+									"src": "/C:/Users/Vincent/Pictures/detective pikachu.png"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{url}}/user/updateUser/u1",
+							"raw": "{{url}}/user/updateUser/u10",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"user",
 								"updateUser",
-								"u1"
+								"u10"
 							]
 						}
 					},
@@ -1017,6 +1017,808 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "User Testing",
+			"item": [
+				{
+					"name": "Register User (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "04545a0c-67d6-4731-9635-b6857e78360f",
+								"exec": [
+									"data = pm.environment.get(\"register\");\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"register_status_code\":400,\r",
+									"            \"register_message\":\"Username Kosong\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"register_username\": \"u10\",\r",
+									"            \"register_status_code\":400,\r",
+									"            \"register_message\":\"Password Kosong\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"register_username\": \"u10\",\r",
+									"            \"register_password\": \"10\",\r",
+									"            \"register_status_code\":400,\r",
+									"            \"register_message\":\"name Kosong\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"register_username\": \"u10\",\r",
+									"            \"register_password\": \"10\",\r",
+									"            \"register_name\": \"n10\",\r",
+									"            \"register_status_code\":400,\r",
+									"            \"register_message\":\"phone number Kosong\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"register_username\": \"u12\",\r",
+									"            \"register_password\": \"12\",\r",
+									"            \"register_name\": \"n12\",\r",
+									"            \"register_phone_number\": \"087819111575\",\r",
+									"            \"register_status_code\":200,\r",
+									"            \"register_message\":\"akun u12 berhasil dibuat\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"register_username\": \"u10\",\r",
+									"            \"register_password\": \"10\",\r",
+									"            \"register_name\": \"n10\",\r",
+									"            \"register_phone_number\": \"087819111575\",\r",
+									"            \"register_status_code\":400,\r",
+									"            \"register_message\":\"Username sudah terpakai\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"register_username\", currentData[\"register_username\"]);\r",
+									"pm.environment.set(\"register_password\", currentData[\"register_password\"]);\r",
+									"pm.environment.set(\"register_name\", currentData[\"register_name\"]);\r",
+									"pm.environment.set(\"register_phone_number\", currentData[\"register_phone_number\"]);\r",
+									"pm.environment.set(\"register_status_code\", currentData[\"register_status_code\"]);\r",
+									"pm.environment.set(\"register_message\", currentData[\"register_message\"]);\r",
+									"pm.environment.set(\"register\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7c9fefe-0e8a-453f-9c72-4c0fed473cb6",
+								"exec": [
+									"data = pm.environment.get(\"register\");\r",
+									"\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Register User (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"register_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned message is correct\", function () {\r",
+									"    pm.expect(pm.response.text()).to.eql(pm.variables.get(\"register_message\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"register_username\");\r",
+									"    pm.environment.unset(\"register_password\");\r",
+									"    pm.environment.unset(\"register_name\");\r",
+									"    pm.environment.unset(\"register_phone_number\");\r",
+									"    pm.environment.unset(\"register_status_code\");\r",
+									"    pm.environment.unset(\"register_message\");\r",
+									"    pm.environment.unset(\"register\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{register_username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{register_password}}",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "{{register_name}}",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "{{register_phone_number}}",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "/C:/Users/Vincent/Pictures/detective pikachu.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d36e0354-bf47-4e8e-a205-231c773bdb06",
+								"exec": [
+									"data = pm.environment.get(\"login\");\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"login_status_code\":400,\r",
+									"            \"login_message\":\"Username Kosong\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"login_username\": \"u10\",\r",
+									"            \"login_status_code\":400,\r",
+									"            \"login_message\":\"Password Kosong\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"login_username\": \"u200\",\r",
+									"            \"login_password\": \"200\",\r",
+									"            \"login_status_code\":400,\r",
+									"            \"login_message\":\"akun tidak ditemukan\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"login_username\": \"u10\",\r",
+									"            \"login_password\": \"10\",\r",
+									"            \"login_status_code\":200\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"login_username\", currentData[\"login_username\"]);\r",
+									"pm.environment.set(\"login_password\", currentData[\"login_password\"]);\r",
+									"pm.environment.set(\"login_status_code\", currentData[\"login_status_code\"]);\r",
+									"pm.environment.set(\"login_message\", currentData[\"login_message\"]);\r",
+									"pm.environment.set(\"login\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "f6153197-8ce6-4382-9458-5208ab753ca8",
+								"exec": [
+									"data = pm.environment.get(\"login\");\r",
+									"\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Login User (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"login_status_code\"));\r",
+									"});\r",
+									"\r",
+									"if(pm.variables.get(\"login_status_code\") == 200){\r",
+									"    \r",
+									"}else{\r",
+									"    pm.test(\"Returned message is correct\", function () {\r",
+									"        pm.expect(pm.response.text()).to.eql(pm.variables.get(\"login_message\"));\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"login_username\");\r",
+									"    pm.environment.unset(\"login_password\");\r",
+									"    pm.environment.unset(\"login_status_code\");\r",
+									"    pm.environment.unset(\"login_message\");\r",
+									"    pm.environment.unset(\"login\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{login_username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{login_password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "75aa6480-90b7-40fe-81d0-933e5e6c5fd2",
+								"exec": [
+									"data = pm.environment.get(\"update\");\r",
+									"\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"\r",
+									"if(pm.variables.get(\"update_order\")==2 || pm.variables.get(\"update_order\")==3){\r",
+									"    pm.sendRequest({\r",
+									"        url: url,\r",
+									"        method: 'POST',\r",
+									"        body: {\r",
+									"            mode: 'urlencoded',\r",
+									"            urlencoded: [\r",
+									"                {key: \"username\", value: \"u10\", disabled:false},\r",
+									"                {key: \"password\", value: \"10\", disabled:false},\r",
+									"            ]\r",
+									"        }\r",
+									"    }, function (err, response) {\r",
+									"        pm.environment.set(\"update_jwt\", response.json().token);\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"update_username\": \"u10\",\r",
+									"            \"update_jwt\":\"\",\r",
+									"            \"update_order\":1,\r",
+									"            \"update_status_code\":401,\r",
+									"            \"update_message\":\"Token not found\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"update_username\": \"u10\",\r",
+									"            \"update_jwt\":\"asdf\",\r",
+									"            \"update_order\":2,\r",
+									"            \"update_status_code\":401,\r",
+									"            \"update_message\":\"Token Invalid\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"update_username\": \"u200\",\r",
+									"            \"update_status_code\":404,\r",
+									"            \"update_order\":3,\r",
+									"            \"update_message\":\"Username Tidak Sesuai Dengan Token\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"update_username\":\"u10\",\r",
+									"            \"update_password\":\"10\",\r",
+									"            \"update_name\":\"n10\",\r",
+									"            \"update_phone_number\":\"1010\",\r",
+									"            \"update_order\":4,\r",
+									"            \"update_status_code\":200,\r",
+									"            \"update_message\":\"Update informasi berhasil\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"update_username\", currentData[\"update_username\"]);\r",
+									"pm.environment.set(\"update_password\", currentData[\"update_password\"]);\r",
+									"pm.environment.set(\"update_name\", currentData[\"update_name\"]);\r",
+									"pm.environment.set(\"update_phone_number\", currentData[\"update_phone_number\"]);\r",
+									"pm.environment.set(\"update_status_code\", currentData[\"update_status_code\"]);\r",
+									"pm.environment.set(\"update_message\", currentData[\"update_message\"]);\r",
+									"pm.environment.set(\"update_order\",currentData[\"update_order\"]);\r",
+									"pm.environment.set(\"update_jwt\",currentData[\"update_jwt\"]);\r",
+									"pm.environment.set(\"update\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "cf61a8ac-2b07-4dc0-a35d-4e1092fdc004",
+								"exec": [
+									"data = pm.environment.get(\"update\");\r",
+									"\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Update User (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"update_status_code\"));\r",
+									"});\r",
+									"\r",
+									"if(pm.variables.get(\"update_status_code\")==200){\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    tests[\"Returned message is correct\"] = jsonData.message===pm.variables.get(\"update_message\");\r",
+									"}else{\r",
+									"    pm.test(\"Returned message is correct\", function () {\r",
+									"        pm.expect(pm.response.text()).to.eql(pm.variables.get(\"update_message\"));\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"update_username\");\r",
+									"    pm.environment.unset(\"update_password\");\r",
+									"    pm.environment.unset(\"update_name\");\r",
+									"    pm.environment.unset(\"update_phone_number\");\r",
+									"    pm.environment.unset(\"update_status_code\");\r",
+									"    pm.environment.unset(\"update_message\");\r",
+									"    pm.environment.unset(\"update_jwt\");\r",
+									"    pm.environment.unset(\"update_order\");\r",
+									"    pm.environment.unset(\"update\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{update_jwt}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "{{update_password}}",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "{{update_name}}",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "{{update_phone_number}}",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "/C:/Users/Vincent/Pictures/lobster.JPG"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/user/updateUser/{{update_username}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"updateUser",
+								"{{update_username}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "bfeec81e-b48c-4317-bd20-3d7a8810a6d4",
+								"exec": [
+									"data = pm.environment.get(\"get_user\");\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"get_user_keyword\": \"u100\",\r",
+									"            \"get_user_status_code\":404,\r",
+									"            \"get_user_message\":\"Akun tidak ditemukan\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"get_user_keyword\": \"u10\",\r",
+									"            \"get_user_status_code\":200,\r",
+									"            \"get_user_message\":\"Akun berhasil ditemukan\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"get_user_keyword\", currentData[\"get_user_keyword\"]);\r",
+									"pm.environment.set(\"get_user_status_code\", currentData[\"get_user_status_code\"]);\r",
+									"pm.environment.set(\"get_user_message\", currentData[\"get_user_message\"]);\r",
+									"pm.environment.set(\"get_user\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "36be13d5-2bd3-4ab2-a748-cf865c5c6134",
+								"exec": [
+									"data = pm.environment.get(\"get_user\");\r",
+									"\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Get User (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"get_user_status_code\"));\r",
+									"});\r",
+									"\r",
+									"if(pm.variables.get(\"get_user_status_code\")==200){\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    tests[\"Returned message is correct\"] = jsonData.message===pm.variables.get(\"get_user_message\");\r",
+									"}else{\r",
+									"    pm.test(\"Returned message is correct\", function () {\r",
+									"        pm.expect(pm.response.text()).to.eql(pm.variables.get(\"get_user_message\"));\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"get_user_keyword\");\r",
+									"    pm.environment.unset(\"get_user_status_code\");\r",
+									"    pm.environment.unset(\"get_user_message\");\r",
+									"    pm.environment.unset(\"get_user\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/{{get_user_keyword}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{get_user_keyword}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "15f401ea-6caf-4d6a-b2d7-15705aa5393c",
+								"exec": [
+									"data = pm.environment.get(\"delete\");\r",
+									"\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"\r",
+									"if(pm.variables.get(\"delete_order\")==2 || pm.variables.get(\"delete_order\")==3){\r",
+									"    pm.sendRequest({\r",
+									"        url: url,\r",
+									"        method: 'POST',\r",
+									"        body: {\r",
+									"            mode: 'urlencoded',\r",
+									"            urlencoded: [\r",
+									"                {key: \"username\", value: \"u11\", disabled:false},\r",
+									"                {key: \"password\", value: \"11\", disabled:false},\r",
+									"            ]\r",
+									"        }\r",
+									"    }, function (err, response) {\r",
+									"        pm.environment.set(\"delete_jwt\", response.json().token);\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"delete_username\": \"u10\",\r",
+									"            \"delete_jwt\":null,\r",
+									"            \"delete_order\":1,\r",
+									"            \"delete_status_code\":401,\r",
+									"            \"delete_message\":\"Token not found\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"delete_username\": \"u10\",\r",
+									"            \"delete_jwt\":\"asdf\",\r",
+									"            \"delete_order\":2,\r",
+									"            \"delete_status_code\":401,\r",
+									"            \"delete_message\":\"Token Invalid\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"delete_username\": \"u200\",\r",
+									"            \"delete_order\":3,\r",
+									"            \"delete_status_code\":404,\r",
+									"            \"delete_message\":\"Username Tidak Sesuai Dengan Token\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"delete_username\":\"u11\",\r",
+									"            \"delete_order\":4,\r",
+									"            \"delete_status_code\":200,\r",
+									"            \"delete_message\":\"Berhasil delete akun u11\"\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"delete_username\", currentData[\"delete_username\"]);\r",
+									"pm.environment.set(\"delete_status_code\", currentData[\"delete_status_code\"]);\r",
+									"pm.environment.set(\"delete_order\", currentData[\"delete_order\"]);\r",
+									"pm.environment.set(\"delete_message\", currentData[\"delete_message\"]);\r",
+									"pm.environment.set(\"delete_order\",currentData[\"delete_order\"]);\r",
+									"pm.environment.set(\"delete_jwt\",currentData[\"delete_jwt\"]);\r",
+									"pm.environment.set(\"delete\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "b829fac9-04f5-4d11-81fd-8fdca467a45d",
+								"exec": [
+									"data = pm.environment.get(\"delete\");\r",
+									"\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Delete User (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"delete_status_code\"));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Returned message is correct\", function () {\r",
+									"    pm.expect(pm.response.text()).to.eql(pm.variables.get(\"delete_message\"));\r",
+									"});\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"delete_username\");\r",
+									"    pm.environment.unset(\"delete_status_code\");\r",
+									"    pm.environment.unset(\"delete_message\");\r",
+									"    pm.environment.unset(\"delete_order\");\r",
+									"    pm.environment.unset(\"delete_jwt\");\r",
+									"    pm.environment.unset(\"delete\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{delete_jwt}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/{{delete_username}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"{{delete_username}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrade User (Testing)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "3f3df91c-c7dd-4499-b2df-6465f088fac0",
+								"exec": [
+									"data = pm.environment.get(\"upgrade\");\r",
+									"\r",
+									"url = pm.environment.get(\"url\")+'/user/login';\r",
+									"\r",
+									"if(pm.variables.get(\"upgrade_order\")==3){\r",
+									"    pm.sendRequest({\r",
+									"        url: url,\r",
+									"        method: 'POST',\r",
+									"        body: {\r",
+									"            mode: 'urlencoded',\r",
+									"            urlencoded: [\r",
+									"                {key: \"username\", value: \"u10\", disabled:false},\r",
+									"                {key: \"password\", value: \"10\", disabled:false},\r",
+									"            ]\r",
+									"        }\r",
+									"    }, function (err, response) {\r",
+									"        pm.environment.set(\"upgrade_jwt\", response.json().token);\r",
+									"    });\r",
+									"}else if(pm.variables.get(\"upgrade_order\")==2){\r",
+									"    pm.sendRequest({\r",
+									"        url: url,\r",
+									"        method: 'POST',\r",
+									"        body: {\r",
+									"            mode: 'urlencoded',\r",
+									"            urlencoded: [\r",
+									"                {key: \"username\", value: \"u8\", disabled:false},\r",
+									"                {key: \"password\", value: \"8\", disabled:false},\r",
+									"            ]\r",
+									"        }\r",
+									"    }, function (err, response) {\r",
+									"        pm.environment.set(\"upgrade_jwt\", response.json().token);\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"\r",
+									"if(!data || data.length<=0){\r",
+									"    data = [\r",
+									"        {\r",
+									"            \"upgrade_jwt\":null,\r",
+									"            \"upgrade_order\":1,\r",
+									"            \"upgrade_status_code\":401,\r",
+									"            \"upgrade_message\":\"Token not found\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"upgrade_jwt\":\"asdf\",\r",
+									"            \"upgrade_order\":2,\r",
+									"            \"upgrade_status_code\":401,\r",
+									"            \"upgrade_message\":\"Token Invalid\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"upgrade_order\":3,\r",
+									"            \"upgrade_status_code\":200,\r",
+									"            \"upgrade_message\":\"Akun 1 sudah premium\"\r",
+									"        },\r",
+									"        {\r",
+									"            \"upgrade_order\":4,\r",
+									"            \"upgrade_status_code\":200\r",
+									"        }\r",
+									"    ]\r",
+									"}\r",
+									"\r",
+									"let currentData = data.shift();\r",
+									"pm.environment.set(\"upgrade_username\", currentData[\"upgrade_username\"]);\r",
+									"pm.environment.set(\"upgrade_status_code\", currentData[\"upgrade_status_code\"]);\r",
+									"pm.environment.set(\"upgrade_order\", currentData[\"upgrade_order\"]);\r",
+									"pm.environment.set(\"upgrade_message\", currentData[\"upgrade_message\"]);\r",
+									"pm.environment.set(\"upgrade_order\",currentData[\"upgrade_order\"]);\r",
+									"pm.environment.set(\"upgrade_jwt\",currentData[\"upgrade_jwt\"]);\r",
+									"pm.environment.set(\"upgrade\", data);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c2ace0b-73d9-4f4d-aaca-a33f3ce84b52",
+								"exec": [
+									"data = pm.environment.get(\"upgrade\");\r",
+									"\r",
+									"flag=false;\r",
+									"\r",
+									"if (data && data.length > 0){\r",
+									"    postman.setNextRequest(\"Upgrade User (Testing)\");\r",
+									"}else{\r",
+									"    flag = true;\r",
+									"}\r",
+									"\r",
+									"pm.test(\"Status code is correct\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get(\"upgrade_status_code\"));\r",
+									"});\r",
+									"\r",
+									"if(pm.variables.get(\"upgrade_status_code\")==200){\r",
+									"    \r",
+									"}else{\r",
+									"    pm.test(\"Returned message is correct\", function () {\r",
+									"        pm.expect(pm.response.text()).to.eql(pm.variables.get(\"upgrade_message\"));\r",
+									"    });\r",
+									"}\r",
+									"\r",
+									"if(flag){\r",
+									"    pm.environment.unset(\"upgrade_status_code\");\r",
+									"    pm.environment.unset(\"upgrade_message\");\r",
+									"    pm.environment.unset(\"upgrade_jwt\");\r",
+									"    pm.environment.unset(\"upgrade_order\");\r",
+									"    pm.environment.unset(\"upgrade\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"type": "text",
+								"value": "{{upgrade_jwt}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user/upgrade",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"upgrade"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Review Testing",
 			"item": [
 				{
@@ -1025,7 +1827,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "f0fe592d-8cbf-4560-92fd-dbcd35b65108",
+								"id": "1e9e9244-ece8-4455-87d9-4669b30fb625",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1098,7 +1900,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3dc59d72-8b26-4c96-a786-22957b8a431e",
+								"id": "8849d131-c282-4a46-a927-a9f6b973634d",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"flag=false;\r",
@@ -1176,7 +1978,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "68fd8a66-2fbb-48cf-9c5a-9074c1094d5b",
+								"id": "c21af25f-d39a-4dbe-b73d-c9ff5640a138",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1231,7 +2033,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b0bb3f0e-2670-4f12-a899-0a49e792a140",
+								"id": "4349f5cf-ceaf-4d0f-b728-9b39077e7259",
 								"exec": [
 									"data = pm.environment.get(\"create_review\");\r",
 									"flag=false;\r",
@@ -1309,7 +2111,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "49964d65-31b0-4793-966b-886f4ea1d73e",
+								"id": "91bb7c93-081e-4bf0-ae2a-8f4c73a4774d",
 								"exec": [
 									"data = pm.environment.get(\"get_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1456,7 +2258,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "66e77673-053f-422b-9215-e0668066d5cd",
+								"id": "0b8a0df4-bc99-4b96-a82e-89f122fdb55b",
 								"exec": [
 									"data = pm.environment.get(\"get_review\");\r",
 									"flag=false;\r",
@@ -1540,7 +2342,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "8fa4fcce-f236-4233-80cf-f8dfd81670fe",
+								"id": "c6651431-c2d7-4312-ac12-40c90e0ddd11",
 								"exec": [
 									"data = pm.environment.get(\"update_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1613,7 +2415,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "46691bd3-b0ca-44f6-8347-209fa5785f17",
+								"id": "1d9f302b-89c1-4967-b5fe-a79a5ac8fdd6",
 								"exec": [
 									"data = pm.environment.get(\"update_review\");\r",
 									"flag=false;\r",
@@ -1691,7 +2493,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c7023cbb-8978-4a78-9ae9-39fb96c56615",
+								"id": "ce098cf6-f3f7-4c27-a3ef-bb47ce031366",
 								"exec": [
 									"data = pm.environment.get(\"delete_review\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -1754,7 +2556,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8848b92c-c575-454f-997c-b73d25d394c1",
+								"id": "9d627661-8a32-4848-a606-15d483180bdb",
 								"exec": [
 									"data = pm.environment.get(\"delete_review\");\r",
 									"flag=false;\r",
@@ -1824,7 +2626,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "3d0e8187-8fcd-4581-bb3e-3afa0e7c5a87",
+								"id": "38801eae-f5fa-4088-bb16-4e33f17626ca",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"url = pm.environment.get(\"url\") + '/user/login';\r",
@@ -1880,7 +2682,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c5330c6a-a8cc-45cf-9d35-12a46854d2c6",
+								"id": "953d6482-9235-4a84-b437-fb132f41ea41",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"flag=false;\r",
@@ -1942,7 +2744,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "367de412-15aa-4d8e-93ce-c6d49f8ca032",
+								"id": "c182ac25-808a-4ee6-908d-ee97baf63923",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"url = pm.environment.get(\"url\") + '/user/login';\r",
@@ -2135,7 +2937,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "54d868f2-c49c-432b-b1b1-e3cbd7740735",
+								"id": "f2a40e60-626b-48be-9d66-18b36bf565fb",
 								"exec": [
 									"data = pm.environment.get(\"get_book\");\r",
 									"flag=false;\r",
@@ -2215,7 +3017,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "b3c52ca4-b177-415d-9fa2-40360ae38b3d",
+								"id": "f9653b2a-dee4-4c77-91a6-520905b4952e",
 								"exec": [
 									"data = pm.environment.get(\"create_bookmark\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -2289,7 +3091,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ebe0dc79-1a51-41cb-a182-0b5bc66899fc",
+								"id": "9182ad68-5c6d-4dec-ba86-971176dea88c",
 								"exec": [
 									"data = pm.environment.get(\"create_bookmark\");\r",
 									"flag=false;\r",
@@ -2367,7 +3169,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "fe016fec-6561-4419-b88e-0fe8aef87361",
+								"id": "d47b48f8-2e20-46f9-b3d9-44a009664ce5",
 								"exec": [
 									"data = pm.environment.get(\"get_bookmark\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -2424,7 +3226,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ed8fa45a-7db6-4ab5-9308-afddcfcd5a4b",
+								"id": "f5e0410b-ccd2-4a8b-83d7-d63ed2868915",
 								"exec": [
 									"data = pm.environment.get(\"get_bookmark\");\r",
 									"flag=false;\r",
@@ -2485,7 +3287,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "5af38a96-484f-4eb4-ae1f-e23d2b096350",
+								"id": "b045c210-e8ed-4c64-a06d-0dc6dd26ba75",
 								"exec": [
 									"data = pm.environment.get(\"update_bookmark\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -2549,7 +3351,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1029d983-345d-45a6-8a5a-724638b8b9b0",
+								"id": "b3a1b9d2-e317-4aea-a9b6-c5591cb689f8",
 								"exec": [
 									"data = pm.environment.get(\"update_bookmark\");\r",
 									"flag=false;\r",
@@ -2627,7 +3429,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "74cb92df-ae12-4758-a910-027f0b908900",
+								"id": "4943c7bd-eda1-4ad9-8fca-b4437a69d3b5",
 								"exec": [
 									"data = pm.environment.get(\"delete_bookmark\");\r",
 									"url = pm.environment.get(\"url\")+'/user/login';\r",
@@ -2683,7 +3485,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "aff62b37-495a-4d25-abff-855e599c913f",
+								"id": "fede9de9-b0a4-4b6a-82a6-1fd67d6ba94d",
 								"exec": [
 									"data = pm.environment.get(\"delete_bookmark\");\r",
 									"flag=false;\r",
